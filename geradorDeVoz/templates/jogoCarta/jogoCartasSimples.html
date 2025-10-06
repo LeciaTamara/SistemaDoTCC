@@ -1,0 +1,81 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="{% static 'css/cartas.css' %}">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <title>Jogo de cartas</title>
+    <!--Usando o howler via CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/howler@2.2.4/dist/howler.min.js"></script>
+</head>
+<body class="bg-info-subtle">
+    {% csrf_token %}
+
+    <div class="container py-4">
+        <header>
+            <div class="mb-4">
+                <div class="col-12 d-flex justify-content-between align-items-center">
+    
+                    <!-- Grupo: botão + título -->
+                    <div class="d-flex align-items-center gap-2">
+                        <button type="button" class="reproduzir" data-texto="Cartas das sílabas - Sílabas Simples">
+                            <i class="fs-3 text-primary bi bi-mic-fill"></i>
+                        </button>
+    
+                        <h1 class="fw-bold mb-0" style="color: #002b5c;">
+                            Cartas das sílabas - Sílabas Simples
+                        </h1>
+                    </div>
+    
+                    <!-- Botão Voltar à direita -->
+                    <div class="d-flex flex-column align-items-end ms-auto">
+                        <button type="button" class="reproduzir"
+                            data-texto="Clique no botão para voltar para a tela das trilhas">
+                            <i class="fs-3 text-primary bi bi-mic-fill"></i>
+                        </button>
+                        <a href="{% url 'indexAPiView' %}" class="text-decoration-none mt-1"
+                            style="color: darkblue;">Voltar</a>
+                    </div>
+    
+                </div>
+            </div>
+        </header>
+        
+        <main>
+            <div class="row mb-3">
+                <div class="col-12">
+                    <div class="position-relative pl-3">
+
+                        <button type="button" class="reproduzir" data-texto="Clique na carta e procure a carta que possui a figura que começa com a sílaba que está na
+                                                    carta,ou procure a carta que possui a sílaba que começa com o nome da figura">
+                            <i class="fs-3 text-primary bi bi-mic-fill"></i>
+                        </button>
+
+                        <p class="fs-5 text-start">
+                            Clique na carta e procure a carta que possui a figura que começa com a sílaba que está na
+                            carta,ou procure a carta que possui a sílaba que começa com o nome da figura
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+                <div class="row justify-content-center">
+                    <div class="col-12 d-flex justify-content-center">
+                        <div class="row row-cols-12 g-3 grid m-3" id="clicarNaLetra"></div>
+                    </div>
+                </div>
+            </div> 
+        </main>
+    </div>
+
+    <!-- data-url permite  que o modal do javaScript pegue a url do django para avançar para o desafio3-->
+    <div id="trilha" data-url="{% url 'indexAPiView' %}"></div>
+    
+    <script src="{% static 'js/javaScriptGenerico/principal.js' %}"></script>
+    <script src="{% static 'js/cartas/cartasSimples.js' %}"></script>
+</body>
+</html>

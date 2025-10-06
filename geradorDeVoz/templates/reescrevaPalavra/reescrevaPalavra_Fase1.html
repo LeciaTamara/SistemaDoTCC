@@ -1,0 +1,166 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="{% static 'css/reescrevaFrase.css' %}">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <title>complete a palavra fase 1</title>
+    <script src="https://cdn.jsdelivr.net/npm/howler@2.2.4/dist/howler.min.js"></script>
+</head>
+
+<body class="bg-info-subtle">
+    <div class="container py-5">
+        <header>
+            <div class="p-3">
+            
+                <!-- Linha 1: Botão Reproduzir + Botão Voltar -->
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                    <!-- Botão Reproduzir -->
+                    <button type="button" class="reproduzir" data-texto="Complete a palavra de acordo com a figura">
+                        <i class="fs-3 text-primary bi bi-mic-fill"></i>
+                    </button>
+            
+                    <!-- Botão Voltar -->
+                    <div class="d-flex align-items-center">
+                        <button type="button" class="reproduzir" data-texto="Clique no link para voltar para a tela das trilhas">
+                            <i class="fs-3 text-primary bi bi-mic-fill"></i>
+                        </button>
+            
+                        <a href="{% url 'indexAPiView' %}" class="text-decoration-none" style="color: darkblue;">
+                            Voltar
+                        </a>
+                    </div>
+                </div>
+            
+                <!-- Linha 2: Título -->
+                <h1 class="mb-0 fw-semibold" style="color:#002b5c;">
+                    Complete a palavra de acordo com a figura
+                </h1>
+            
+            </div>
+            
+            <div class="position-relative d-flex justify-content-center align-items-center p3 flex-column flex-md-row">
+                <button type="button" class="reproduzir"
+                    data-texto="Clique na figura para escutar o seu som e identificar as letras que estão faltando para reescrever a palavra  completa dentro do quadro branco">
+                    <i class="fs-3 text-primary bi bi-mic-fill"></i>
+                </button>
+                
+                <p class="fs-2 mt-lg-5 mt-sm-5 mb-3 fw-medium text-primary-emphasis">
+                    Clique na figura para escutar o seu som e identificar as letras que estão faltando, para reescrever a palavra completa dentro do quadro branco
+                </p>
+            </div>
+            
+        </header>
+
+        <main>
+            <div class="Todasfrase" id="IDfrase">
+                <div class="row g-2">
+                    <div class="coluna1 col-12 col-md-6 ms-md-auto">
+                        <div>
+                            <img class="mt-3" id="lapis" src="{% static 'image/atividadeReecreverFrase/fase1/lapis.png' %}"
+                                alt="Lápis de escrever">
+                            <p class="fs-2 mt-3 mb-3">___ ___ PIS</p>
+                            <input class="fs-1 border border-primary" type="text" name="" id="input-lapis">
+                        </div>
+            
+                        <br>
+            
+                        <div>
+                            <img class="mt-3" id="alicate" src="{% static 'image/atividadeReecreverFrase/fase1/alicate.png' %}"
+                                alt="Alicate">
+                            <p class="fs-2 mt-3 mb-3">ALI ___ ___TE</p>
+                            <input class="fs-1 border border-primary" type="text" name="" id="input-alicate">
+                        </div>
+            
+                        <br>
+            
+                        <div>
+                            <img class="mt-3" id="celular" src="{% static 'image/atividadeReecreverFrase/fase1/celular.png' %}"
+                                alt="Celular">
+                            <p class="fs-2 mt-3 mb-3">___ ___ LULAR </p>
+                            <input class="fs-1 border border-primary" type="text" name="" id="input-celular">
+                        </div>
+            
+                    </div>
+            
+                    <div class="coluna2 col-12 col-md-6">
+                        <div>
+                            <img class="mt-3" id="medico" src="{% static '/image/atividadeReecreverFrase/fase1/medico.png' %}"
+                                alt="Médico">
+                            <p class="fs-2 mt-3 mb-3">MEDI ___ ___</p>
+                            <input class="fs-1 border border-primary" type="text" name="" id="input-medico">
+                        </div>
+            
+                        <br>
+            
+                        <div>
+                            <img class="mt-3" id="relogio" src="{% static 'image/atividadeReecreverFrase/fase1/relogio.png' %}"
+                                alt="Relógio de pulso">
+                            <p class="fs-2 mt-3 mb-3">RE ___ ___ GIO</p>
+                            <input class="fs-1 border border-primary" type="text " name="" id="input-relogio">
+                        </div>
+            
+                        <br>
+            
+                        <div>
+                            <img class="mt-3" id="moeda" src="{% static 'image/atividadeReecreverFrase/fase1/moeda.jpg' %}"
+                                alt="moedas">
+                            <p class="fs-2 mt-3 mb-3">MOE ___ ___</p>
+                            <input class="fs-1 border border-primary" type="text" name="" id="input-moeda">
+                        </div>
+            
+                    </div>
+            
+                    <!-- telas grandes -->
+                    <div class="position-relative col col-lg-12 d-flex flex-column">
+                        <div class="col-12 col-md-4">
+                            <div class="position-relative d-flex d-none d-lg-flex justify-content-end align-items-end p3 flex-column flex-md-row mt-5"
+                                style="left: 5rem;">
+                                <nav class="navbar navbar-expand-lg ms-md-auto mt-2 mt-md-0">
+
+                                    <button type="button" class="reproduzir" data-texto="Clique no botão para avançar para a próxima atividade da trilha Complete as palavras com as letra que estão faltando - Fase 2">
+                                        <i class="fs-3 text-primary bi bi-mic-fill"></i>
+                                    </button>
+
+                                    <a href="{% url 'indexAPiView' %}" class="btn text-white fw-bold text-decoration-none"
+                                        style="background-color: #058002;"><i class="bi bi-arrow-right fs-1"></i>
+                                        <br>
+                                        Avançar
+                                    </a>
+                                </nav>
+                            </div>
+                        </div>
+                        
+                        <!-- telas pequenas -->
+                        <div class="d-flex d-lg-none justify-content-center">
+                            <nav class="navbar navbar-expand-lg ms-md-auto mt-0 mt-md-0">
+
+                                <button type="button" class="reproduzir" data-texto="Clique no botão para avançar para a próxima atividade da trilha Complete as palavras com as letra que estão faltando - Fase 2">
+                                    <i class="fs-3 text-primary bi bi-mic-fill"></i>
+                                </button>
+
+                                <a href="{% url 'indexAPiView' %}" class="btn btn-sm text-white fw-bold text-decoration-none"
+                                    style="background-color: #058002;"><i class="bi bi-arrow-right fs-5"></i>
+                                    <br>
+                                    <br>
+                                    Avançar
+                                </a>
+                            </nav>
+                        </div>
+                    </div>
+            
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="{% static 'js/javaScriptGenerico/principal.js' %}"></script>
+    <script src="{% static 'js/reescrevaFrase/reescrevaLetra.js' %}"></script>
+</body>
+
+</html>

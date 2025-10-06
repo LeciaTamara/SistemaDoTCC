@@ -1,0 +1,132 @@
+.button-silaba {
+    /* NÃO use all: unset */
+    display: inline-block;
+    /* mantém lado a lado */
+    min-width: 160px;
+    /* largura mínima */
+    height: 80px;
+    /* margin: 5px; */
+    /* espaço entre botões */
+    font-weight: bold;
+    color: white;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 8px;
+    font-size: 24px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+/* Cor do título que muda de acordo com a letra */
+.titulo-L,
+.titulo-S,
+.titulo-B {
+    color: #11d452;
+}
+
+.titulo-D {
+    color: #00b0ff;
+}
+
+.titulo-H,
+.titulo-F {
+    color: #4d4dff;
+}
+
+.titulo-P,
+.titulo-G {
+    color: #ab3ed8;
+}
+
+.titulo-J {
+    color: #c90469;
+}
+
+.titulo-K {
+    color: #e5097f;
+}
+
+.titulo-M {
+    color: #7f00b2;
+}
+
+.titulo-Q,
+.titulo-N {
+    color: #0c77a8;
+}
+
+.titulo-C,
+.titulo-R,
+.titulo-V,
+.titulo-X,
+.titulo-Z,
+.titulo-T {
+    color: #2527FF;
+}
+
+
+/* cores dos botões de cada familia */
+.familia-S,
+.familia-L,
+.familia-B {
+    background-color: #11d452;
+}
+
+.familia-C {
+    background-color: #00c6aa;
+}
+
+.familia-D {
+    background-color: #00b0ff;
+}
+
+.familia-Z,
+.familia-H,
+.familia-F {
+    background-color: #4d4dff;
+}
+
+.familia-P,
+.familia-G {
+    background-color: #ab3ed8;
+}
+
+.familia-J {
+    background-color: #c90469;
+}
+
+.familia-K {
+    background-color: #e5097f;
+}
+
+.familia-M {
+    background-color: #7f00b2;
+}
+
+.familia-N {
+    background-color:#38c79e;
+}
+
+.familia-X,
+.familia-Q {
+    background-color: #15ab92;
+}
+
+.familia-R {
+    background-color: #2527FF;
+}
+
+.familia-T {
+    background-color: #35bfd4;
+}
+
+.familia-V {
+    background-color: #4f80fc;
+}
+
+/* Cor do fundo da div onde está os botões */
+.bg-azulRei {
+
+    background-color: #c4ffeb;
+}

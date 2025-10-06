@@ -1,0 +1,135 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="{% static 'css/desafio2.css' %}">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <title>Desafio 2</title>
+    <script src="https://cdn.jsdelivr.net/npm/howler@2.2.4/dist/howler.min.js"></script>
+</head>
+
+<body class="bg-info-subtle">
+    <div class="container-fluid">
+        <header>
+            <div class="p-3">
+                <!-- Linha 1: Botão Reproduzir + Botão Voltar -->
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                    <!-- Botão Reproduzir -->
+                    <button type="button" class="reproduzir"
+                        data-texto="Dona Maria foi ao mercado com R$ 100, para comprar 2 kilos de coxa de frango que é R$12,00 cada kilo e 3 kilos de carne de porco que é R$20,00 cada kilo.">
+                        <i class="fs-3 text-primary bi bi-mic-fill"></i>
+                    </button>
+            
+                    <!-- Botão Voltar -->
+                    <div class="d-flex align-items-center">
+                        <button type="button" class="reproduzir" data-texto="Clique no link para voltar para a tela das trilhas">
+                            <i class="fs-3 text-primary bi bi-mic-fill"></i>
+                        </button>
+            
+                        <a href="{% url 'indexAPiView' %}" class="text-decoration-none" style="color: darkblue;">
+                            Voltar
+                        </a>
+                    </div>
+                </div>
+            
+                <!-- Linha 2: Título -->
+                <h1 class="mb-0" style="color:#002b5c;">
+                    Dona Maria foi ao mercado com R$ 100 reais, para comprar 2 kilos de coxa de frango que é R$12,00
+                    reais cada kilo e 3 kilos de carne de porco que é R$20,00 reais cada kilo.
+                </h1>
+            
+            </div>
+            
+            <div class="position-relative d-flex justify-content-center align-items-center p3 flex-column flex-md-row">
+                
+                <button type="button" class="reproduzir" data-texto="Quanto deu a compra de dona Maria? e quanto irá sobrar de troco para ela? Coloque as respostas da perguntas em cada um dos quadradinhos brancos">
+                    <i class="fs-3 text-primary bi bi-mic-fill"></i>
+                </button>
+                
+                <p class="ms-4 fs-2 text-primary">Quanto deu a compra de dona Maria? e quanto irá sobrar de troco para ela?</p>
+            </div>
+        </header>
+    
+
+        <main>
+            <div class="row text-center">
+                <div class="col-lg-6 col-md-6 col-12">
+                    
+                    <button type="button" class="reproduzir" data-texto="Valor da compra de Dona Maria, coloque a resposta nesse quadradinho branco">
+                        <i class="fs-3 text-primary bi bi-mic-fill"></i>
+                    </button>
+
+                    <p class="paragrafo1 mt-3 mb-3">Valor da compra de Dona Maria</p>
+                    <input class="w-25 border border-primary" type="number" name="" id="desafio2">
+                </div>
+            
+                <div class="col-lg-6 col-md-6 col-12 mt-3 mt-sm-0">
+
+                    <button type="button" class="reproduzir"
+                        data-texto="Valor do troco de Dona Maria, coloque a resposta nesse quadradinho branco">
+                        <i class="fs-3 text-primary bi bi-mic-fill"></i>
+                    </button>
+
+                    <p class="paragrafo2 mt-3 mb-3">Valor do troco de Dona Maria</p>
+                    <input class="w-25 border border-primary" type="number" name="" id="desafio2_1">
+                </div>
+            </div>
+            
+            <!-- Botão em telas médias -->
+            <div class="d-none d-md-flex d-lg-none justify-content-center align-items-start gap-3 mt-5 w-50" style="margin-left: 55%;">
+
+                <button type="button" class="reproduzir mt-5" data-texto="avançar" style="height: 40px;">
+                    <i class="fs-3 text-primary bi bi-mic-fill"></i>
+                </button>
+
+                <a href="{% url 'indexAPiView' %}" class="btn text-white fw-bold text-decoration-none text-center w-50" id="avancar" style="background-color: #058002; margin-top: 3rem;">
+                    <i class="bi bi-arrow-right fs-1"></i><br>
+                    Avançar
+                </a>
+            </div>
+            
+            <!-- Botão em telas grandes -->
+            <div class="d-none d-md-none d-lg-flex justify-content-center align-items-start gap-3 mt-5 w-50" style="margin-left: 65%;">
+            
+                <button type="button" class="reproduzir mt-5" data-texto="avançar">
+                    <i class="fs-3 bi bi-mic-fill text-primary"></i>
+                </button>
+            
+                <a href="{% url 'indexAPiView' %}" class="btn text-white fw-bold text-decoration-none text-center w-25 mt-5"
+                    style="background-color: #058002;">
+                    <i class="bi bi-arrow-right fs-1"></i><br>
+                    Avançar
+                </a>
+            
+            </div>
+
+
+            <!-- botão em telas pequenas -->
+            <div class="d-flex d-lg-none d-md-none justify-content-center">
+                <div class="row justify-content-center mt-5">
+                    <div class="col-12 col-md-6 d-flex justify-content-center">
+
+                        <button type="button" class="reproduzir mt-3" data-texto="avançar" style="height: 40px;">
+                            <i class="fs-3 text-primary bi bi-mic-fill"></i>
+                        </button>
+
+                        <a href="{% url 'indexAPiView' %}" class="btn text-white fw-bold text-decoration-none text-center" style="background-color: #058002;">
+                            <i class="bi bi-arrow-right fs-1"></i><br>
+                            Avançar
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <script src="{% static 'js/javaScriptGenerico/principal.js' %}"></script>
+    <script src="{% static 'js/desafio/desafio2.js' %}"></script>
+</body>
+</html>

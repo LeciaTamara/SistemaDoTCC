@@ -1,0 +1,34 @@
+@media (max-width: 576px){
+    .imagens {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 10px;
+        padding: 10px
+    }
+
+    .imagemFigura{
+        width: 90px;
+        margin: 5px;
+    }
+}
+
+.imagemFigura{
+    width: 150px;
+    margin: 10px;
+}
+
+
+.imagemAcerto{
+    border: 4px solid green;
+    border-radius: 10px;
+}
+
+.imagemErro{
+    border: 4px solid red;
+    border-radius: 10px;
+}
+
+/* Cor do fundo da div onde está os botões */
+.bg-azulRei {
+    background-color: #c4ffeb;
+}

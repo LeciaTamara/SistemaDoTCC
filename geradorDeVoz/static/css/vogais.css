@@ -1,0 +1,57 @@
+.caixa-letras {
+    width: 100%;
+    max-width: 800px;
+    height: 600px;
+    background-color: #b3e5fc;
+    border: 2px solid #0288d1;
+    border-radius: 16px;
+    position: relative;
+    overflow: hidden; /* tudo que passar da borda fica escondido dentro da caixa*/
+}
+
+.letraMovel,
+.letraFixa {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 60px; /* a altura da linha (row) é 60px, então a letra fica centralizada na altura também*/
+    border-radius: 10px;
+    user-select: none; /* permite só arrastar o texto, e não permite selecionar o texto*/
+    cursor: grab; /* quando passa o mouse na letra cria o efeito de uma mão indo pegar o texto*/
+}
+
+.letraMovel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    touch-action: none; /* permite que em telas de toque os elementos possa ser arrastados com o dedo*/
+    background-color: #0288d1;
+    color: white;
+    border: 2px solid #01579b;
+    z-index: 10; /*Permite que as letras fiquem em cima das letraFixa*/
+}
+
+.letraFixa {
+    background-color: #eeeeee;
+    color: #333;
+    border: 2px dashed #999;
+    z-index: 1;
+}
+
+.letraFixa.acertou {
+    background-color: lightgreen;
+    transition: background-color 0.3s ease;
+}
+
+.letraFixa.errou {
+    background-color: lightcoral;
+    transition: background-color 0.3s ease;
+}
+
+.letraMovel.desaparecer {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}

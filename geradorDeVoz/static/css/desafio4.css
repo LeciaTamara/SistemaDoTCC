@@ -1,0 +1,149 @@
+ /* #alfabetoDesorganizado {
+     list-style: none;
+     padding: 0;
+     width: 100px;
+ } */
+
+ .alfabetoDesorganizado-letra{
+    all: unset;
+    /* remova ou substitua */
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    height: 80px;
+    font-weight: bold;
+    color: #000000;
+    /* background-color: gray; */
+    /* fallback */
+   /* border: none;*/
+    border-radius: 8px;
+    font-size: 24px;
+    text-align: center;
+    transition: transform 0.3s ease;
+     padding: 10px;
+     margin: 5px;
+     background-color: #ab3ed8;
+     cursor: move;
+     border: 1px solid #ccc;
+ }
+
+ #resposta {
+     font-weight: bold;
+     margin-top: 10px;
+ }
+
+ /* Cor do fundo da div onde está os botões */
+.bg-azulRei{
+    background-color: #c4ffeb;
+}
+
+/* Css onde aparece a mensagem de parabéns na tela */
+.modal-fim {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    animation: fadeIn 0.5s ease forwards;
+}
+
+.modal-fim.ativo {
+    display: flex;
+}
+
+.conteudo-modal {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    animation: slideUp 0.5s ease forwards;
+}
+
+.conteudo-modal h2 {
+    margin-bottom: 10px;
+}
+
+.conteudo-modal button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #0003b6;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Css onde aparece a mensagem de parabéns na tela */
+.modal-fim {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    animation: fadeIn 0.5s ease forwards;
+}
+
+.modal-fim.ativo {
+    display: flex;
+}
+
+.conteudo-modal {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    animation: slideUp 0.5s ease forwards;
+}
+
+.conteudo-modal h2 {
+    margin-bottom: 10px;
+}
+
+.conteudo-modal button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #0003b6;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Cria animações personalizadas */
+@keyframes aparecetelaParabens {
+
+    /* No inicio a animação começa com opacidade 0 */
+    from {
+        opacity: 0;
+    }
+
+    /* No final a animação termina com opacidade 1 */
+    to {
+        opacity: 1;
+    }
+}
+
+/* faz a animação subir suavimente na tela no momento em que aparece */
+@keyframes subirATelaDeParabens {
+    from {
+        /* move-se 50 pixels para baixo */
+        transform: translateY(50px);
+        opacity: 0;
+    }
+
+    to {
+        /* Volta para a posição original de antes */
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

@@ -1,0 +1,209 @@
+.timeline {
+    position: relative;
+    padding: 0;
+    margin-top: 20px;
+    list-style: none;
+}
+
+/* Linha central no desktop */
+.timeline::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 3px;
+    background-color: transparent;
+    /* no desktop, só usamos as diagonais */
+}
+
+.timeline>li {
+    position: relative;
+    margin-bottom: 40px;
+    height: 160px;
+}
+
+/* Círculo da timeline */
+.timeline>li .timeline-image {
+    z-index: 100;
+    position: absolute;
+    left: 50%;
+    width: 120px;
+    height: 120px;
+    margin-left: -60px;
+    border: 5px solid #3b5998;
+    border-radius: 50%;
+    background-color: #3b5998;
+    box-shadow: 0 0 4px #4582ec;
+    overflow: hidden;
+}
+
+/* Botão dentro do círculo */
+.timeline>li .timeline-image .btn {
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 50% !important;
+    border: none;
+}
+
+/* Linhas diagonais no desktop */
+.timeline>li:nth-child(odd) .line:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: calc(50% + 60px);
+    width: 3px;
+    height: 160px;
+    background-color: #3b5998;
+    transform: rotate(-44deg);
+    box-shadow: 0 0 4px #4582ec;
+}
+
+.timeline>li:nth-child(even) .line:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: calc(50% - 60px);
+    width: 3px;
+    height: 160px;
+    background-color: #3b5998;
+    transform: rotate(44deg);
+    box-shadow: 0 0 4px #4582ec;
+}
+
+/* Responsivo */
+@media only screen and (max-width: 767px) {
+    .timeline {
+        padding-left: 0;
+    }
+
+    /* Linha reta central no mobile */
+    .timeline::before {
+        background-color: #3b5998;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 2px;
+    }
+
+    .timeline>li {
+        height: auto;
+        margin-bottom: 30px;
+    }
+
+    .timeline>li .timeline-image {
+        position: relative;
+        margin: 0 auto 10px auto;
+        left: auto;
+        transform: none;
+    }
+
+    /* Remove diagonais no mobile */
+    .timeline>li .line {
+        display: none;
+    }
+}
+
+.bg-amareloVivo {
+    background-color: #ffff00;
+}
+
+.bg-hover:hover {
+    background-color: #ffff00;
+}
+
+/* Classe para o botão */
+.desafio {
+    font-size: 1rem;
+    transition: transform 0.3s ease;
+}
+
+/* Efeito de zoom no hover */
+.desafio:hover {
+    transform: scale(1.2);
+}
+
+/* Garante que o texto não aumente */
+.desafio span {
+    font-size: 1rem;
+}
+
+/* Aplica deslocamento lateral só no desktop */
+@media (min-width: 768px) {
+    .desktop-offset {
+        margin-left: 20rem;
+    }
+}
+
+/* Ajustes para telas até 430px */
+@media (max-width: 430px) {
+    .card-title {
+        font-size: 1.2rem;
+        text-align: center;
+        line-height: 1.3;
+    }
+
+    header .position-relative {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header nav.navbar {
+        position: static !important;
+        margin-top: 0.5rem;
+    }
+
+    .timeline-inverted {
+        margin-left: 0 !important;
+    }
+
+    .timeline-image {
+        margin: 0 auto 1rem auto;
+        width: 120px;
+        height: 120px;
+    }
+
+    .timeline-image a {
+        font-size: 0.9rem;
+        text-align: center;
+        padding: 0.5rem;
+    }
+
+    .timeline li {
+        margin-bottom: 1.5rem;
+    }
+}
+
+.bg-cabecalho{
+    background-color: #F5F7FA;
+}
+
+/* botao que reproduz o audio */
+.botaoBastao{
+    margin-bottom: 5px;
+}
+
+.animacao{
+    position: absolute;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.posicaoBotao button{
+    position: relative;
+    z-index: 1;
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+    .linkVoltar {
+        position: relative;
+        left: 30%;
+    }
+}
+
+@media (max-width: 600px) {
+    .linkVoltar {
+        position: relative;
+        left:10%;
+    }
+}

@@ -1,0 +1,111 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="{% static 'css/desafio3.css' %}">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/howler@2.2.4/dist/howler.min.js"></script>
+    <title>Desafio 3</title>
+</head>
+
+<body class="bg-info-subtle">
+    <div class="container">
+        <header>
+            <div class="row">
+                <div class="col-12">
+
+                    <div class="p-3">
+                    
+                        <!-- Linha 1: Botão Reproduzir + Botão Voltar -->
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <!-- Botão Reproduzir -->
+                            <button type="button" class="reproduzir"
+                                data-texto="O Senhor José escreveu incorretamente o nome de sua filha.Em vez de escrever Maisa, ele escreveu Naisa. Qual é a forma correta de escrever o nome dela?">
+                                <i class="fs-3 text-primary bi bi-mic-fill"></i>
+                            </button>
+                    
+                            <!-- Botão Voltar -->
+                            <div class="d-flex align-items-center">
+                                <button type="button" class="reproduzir" data-texto="Clique no link para voltar para a tela das trilhas">
+                                    <i class="fs-3 text-primary bi bi-mic-fill"></i>
+                                </button>
+                    
+                                <a href="{% url 'indexAPiView' %}" class="text-decoration-none" style="color: darkblue;">
+                                    Voltar
+                                </a>
+                            </div>
+                        </div>
+                    
+                        <!-- Linha 2: Título -->
+                        <h1 class="mb-0" style="color:#002b5c;">
+                            O Senhor José escreveu incorretamente o nome de sua filha.
+                            Em vez de escrever Maisa, ele escreveu Naisa.
+                            <br>
+                            Qual é a forma correta de escrever o nome dela?
+                        </h1>
+                    
+                    </div>
+    
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div class="container py-3">
+                <div class="row">
+                    <div class="col-12 text-start mb-3">
+                        <div class="position-relative d-flex justify-content-center align-items-center p3 flex-column flex-md-row">
+                            
+                            <button type="button" class="reproduzir" data-texto="Arraste as letras para formar corretamente o nome da filha do Senhor José.">
+                                <i class="fs-3 text-primary bi bi-mic-fill"></i>
+                            </button>
+
+                            <h3 class="text-primary">
+                                Arraste as letras para formar corretamente o nome da filha do Senhor José.
+                            </h3>
+
+                        </div>
+                    </div>
+
+                    <!-- Caixinhas -->
+                    <div class="col-12">
+                        <div class="letras" id="letras">
+                            <div class="espaco"></div>
+                            <div class="espaco"></div>
+                            <div class="espaco"></div>
+                            <div class="espaco"></div>
+                            <div class="espaco"></div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 text-center ">
+                        <button class="btn btn-primary my-2" onclick="verificarPalavra()">Enviar</button>
+                    </div>
+
+                    <!-- Card com alfabeto -->
+                    <div class="col-12 text-center">
+                        <div class="card bg-azulRei border border-info rounded-4 mx-auto" style="max-height: 400px; max-width: 86%; background-color: #b3e5fc;">
+                            <div class="row row-cols-3 row-cols-sm-4 row-cols-md-6 g-3 m-1 mx-lg-auto letrasAlfabeto"
+                                id="alfabeto"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- data-url permite  que o modal do javaScript pegue a url do django para avançar para o desafio3-->
+    <div id="trilha" data-url="{% url 'indexAPiView' %}"></div>
+
+    <script src="{% static 'js/javaScriptGenerico/principal.js' %}"></script>
+    <script src="{% static 'js/desafio/desafio3.js' %}"></script>
+</body>
+
+</html>

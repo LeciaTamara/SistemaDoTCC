@@ -1,0 +1,50 @@
+h1 {
+    /*1rem para telas menores; 3.5vw para telas médias e grandes; 2 rem para telas que ultrapassa o valor médio(3.5vw)*/
+    font-size: clamp(1.3rem, 3.5vw, 2rem);
+}
+
+.paragrafo1,
+.paragrafo2 {
+    font-size: clamp(1rem, 2vw, 1.8rem);
+}
+
+.paragrafo3{
+    font-size: clamp(1rem, 1.6vw, 1.8rem);
+}
+
+img{
+    width: 20rem;
+    height: 20rem;
+}
+
+.div_imagem{
+    margin-right: 8rem;
+}
+
+/* telas pequenas (celulares)*/
+@media (max-width: 576px) {
+    img{
+        width: 20rem;
+        height: 20rem;
+    }
+
+    .div_imagem {
+        margin-left: 2rem;
+    }
+
+    .paragrafo3,
+    .paragrafo1,
+    .paragrafo2 {
+        font-weight: 800 !important;
+    }
+}
+
+/* telas médias */
+@media (min-width: 768px) and (max-width: 991.98px) {
+
+    .paragrafo3,
+    .paragrafo1,
+    .paragrafo2 {
+        font-weight: 800 !important;
+    }
+}

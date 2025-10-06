@@ -1,0 +1,17 @@
+.color-cian{
+    background-color: #3ad6ee;
+    color: white;
+    border: none;
+}
+
+.color-cian:hover{
+    background-color: #3ad6ee;
+}
+
+.bg-azulEscuro{
+    background-color: #04127a;
+}
+
+.text-azulEscuro{
+    color: #110099;
+}

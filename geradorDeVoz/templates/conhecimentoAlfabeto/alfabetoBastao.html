@@ -1,0 +1,104 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="{% static 'css/alfabeto.css' %}">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+
+    <title>Atividade Reconhecendo o Alfabeto </title>
+    <!--Usando o howler via CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/howler@2.2.4/dist/howler.min.js"></script>
+ 
+</head>
+<body class="bg-info-subtle">
+    {% csrf_token %}
+
+    <div class="container">
+        <header>
+            <div class="row">
+                <div class="col-12">
+                    <div class="p-3">
+                    
+                        <!-- Linha 1: Botão Reproduzir + Botão Voltar -->
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <!-- Botão Reproduzir -->
+                            <button type="button" class="reproduzir" data-texto="Alfabeto com letra de forma, clique em cada letra para escutar o seu som">
+                                <i class="fs-3 text-primary bi bi-mic-fill"></i>
+                            </button>
+                    
+                            <!-- Botão Voltar -->
+                            <div class="d-flex align-items-center">
+                                <button type="button" class="reproduzir" data-texto="Clique no link para voltar para a tela das trilhas">
+                                    <i class="fs-3 text-primary bi bi-mic-fill"></i>
+                                </button>
+                    
+                                <a href="{% url 'indexAPiView' %}" class="text-decoration-none" style="color: darkblue;">
+                                    Voltar
+                                </a>
+                            </div>
+                        </div>
+                    
+                        <!-- Linha 2: Título -->
+                        <h1 class="mb-0" style="color:#002b5c;">
+                            Alfabeto com letra de forma
+                        </h1>
+                    
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main>
+
+            <div class="container mt-4">
+                <div class="row align-items-center">
+            
+                    <!-- Botão -->
+                    <!-- Botão -->
+                    <div class="col-12 col-md-auto mb-3 mb-md-0 text-center text-md-start">
+                        <button type="button" class="reproduzir"
+                            data-texto="Clique na letra para escultar o seu som">
+                            <i class="fs-3 text-primary bi bi-mic-fill"></i>
+                        </button>
+                    </div>
+            
+            
+                    <!-- Parágrafo -->
+                    <div class="col-12 col-md">
+                        <p class="fs-2 text-primary-emphasis text-center text-md-start mb-0">
+                            Clique na letra para escultar o seu som
+                        </p>
+                    </div>
+            
+                </div>
+            </div>
+
+
+            <div class=" card mt-5 mb-5 bg-azulRei border border-info rounded-4">
+                <div class="row row-cols-6 g-3 alfabetoBastao m-3" id="clicarNaLetra"></div>
+            </div>
+
+            <div class="position-relative d-flex justify-content-center align-items-center p3 flex-column flex-md-row">
+                <nav class="navbar navbar-expand-lg ms-md-auto mt-2 mt-md-0">
+
+                    <button type="button" class="reproduzir" data-texto="Clique no botão para avançar para a próxima atividade conhecendo as letras na forma cursiva">
+                        <i class="fs-3 text-primary bi bi-mic-fill"></i>
+                    </button>
+
+                    <a href="{% url 'indexAPiView' %}" class="btn text-white fw-bold text-decoration-none" style="background-color: #058002;"><i class="bi bi-arrow-right fs-1"></i>
+                        <br>
+                        Conhecendo as letras na forma cursiva</a>
+                </nav>
+            </div>
+        </main>
+    </div>
+    
+    <script src="{% static 'js/javaScriptGenerico/principal.js' %}"></script>
+    <script src="{% static 'js/letras/letrasBastao.js' %}"></script>
+    
+</body>
+</html>

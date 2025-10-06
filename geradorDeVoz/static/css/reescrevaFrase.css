@@ -1,0 +1,30 @@
+img{
+    width: 200px;
+    height: 200px;
+    border: 5px solid black;
+}
+
+#alicate{
+    width: 200px;
+    height: 180px;
+}
+
+#celular{
+    width: 180px;
+    height: 300px;
+}
+
+#medico{
+    width: 180px;
+    height: 220px;
+}
+
+#relogio{
+    width: 180px;
+    height: 240px;
+}
+
+input{
+    width: 210px;
+    height: 60px;
+}

@@ -1,0 +1,270 @@
+/* Títulos principais */
+h1 {
+    font-size: 28px;
+    line-height: 1.4; /* espaçameto vertical entre as linhas */
+}
+
+h3 {
+    font-size: 22px;
+    line-height: 1.4;
+}
+
+/* Container dos espaços */
+#letras {
+    display: flex; /* organiza os filhos da div que tem a classe letra em lishas*/
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px; /* cria espaços entre os elementos filhos */
+}
+
+/* Espaços de drop */
+#letras .espaco {
+    width: 64px;
+    height: 64px;
+    border: 2px dashed #000; /* dashed cria uma borda pontilhada */
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    flex-shrink: 0; /* Impede que o espaço onde é para colocar as letras encolha */
+}
+
+/* Letras dentro dos espaços */
+#letras .espaco .letra {
+    margin: 0; 
+    width: 100%;
+    height: 100%;
+    font-size: 28px;
+    display: flex; /* permite centralizar o conteúdo */
+    align-items: center;
+    justify-content: center;
+}
+
+/* Letras arrastáveis */
+.letra {
+    width: 64px; /* tamanho das caixas onde estão as letras*/
+    height: 64px; /* altura das caixas onde estão as letras*/
+    margin: 4px;
+    background: #f7f7f7;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    cursor: grab; /* cria o efeito da mão ao passar o mouse */
+    user-select: none; /* não permite que o texto seja selecionado */
+    line-height: 1; /* altura da linha igual a altura da fonte da letra */
+    -webkit-user-drag: none; /* não permite que o elemento seja arrastado de forma não intencional */
+    -webkit-tap-highlight-color: transparent; /* remove o efeito de destaque ao tocar em um elemento em dispositivos móveis */
+    -webkit-user-select: none; /* não permite que o usuário selecione o texto do elemento - copiar */
+    touch-action: none; /* impede gestos de toque padrão rolagem e zoom com os dedos */
+}
+
+.letra.arrastandoLetra {
+    pointer-events: none; /* não permite interaçoes com o elemento que está sendo arrastado*/
+}
+
+/* Container do alfabeto */
+#alfabeto {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+/* Letras do alfabeto */
+#alfabeto .letra {
+    width: 64px;
+    height: 64px;
+    font-size: 28px;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    background: #f7f7f7;
+}
+
+/* Estilos para telas pequenas (até 576px) */
+@media (max-width: 576px) {
+    body {
+        font-size: 14px;
+    }
+
+    h1 {
+        font-size: clamp(14px, 4vw, 18px); /* fonte se adapta entre 14px e 18px dependendo da largura da tela */
+        line-height: 1.3;
+        font-weight: bold;
+    }
+
+    h3 {
+        font-size: clamp(16px, 3.5vw, 26px);
+        line-height: 1.3;
+        font-weight: bold;
+    }
+
+    #letras {
+        display: grid; /* Muda de flex para grid em telas pequenas */
+        grid-template-columns: repeat(6, 1fr); /* cria 6 colunas */
+        gap: 6px;
+    }
+
+    #letras .espaco {
+        width: 44px;
+        height: 44px;
+        border-width: 1px;
+        border-radius: 6px;
+    }
+
+    #letras .espaco .letra {
+        font-size: clamp(12px, 4vw, 18px);
+    }
+
+    .letra {
+        width: 44px;
+        height: 44px;
+        margin: 2px;
+        font-size: clamp(12px, 4vw, 18px);
+        border-radius: 6px;
+    }
+
+    #alfabeto {
+        gap: 4px;
+    }
+
+    #alfabeto .letra {
+        width: 44px;
+        height: 44px;
+        font-size: clamp(12px, 4vw, 18px);
+        border-radius: 6px;
+    }
+}
+
+/* Feedback opcional */
+.correto {
+    border-color: #28a745 !important;
+    border-width: 4px !important;
+    box-shadow: 0 0 10px #28a745;
+}
+
+.errado {
+    border-color: #ff0000 !important;
+    border-width: 4px !important;
+    box-shadow: 0 0 10px #ff0000;
+}
+
+/* Css onde aparece a mensagem de parabéns na tela */
+.modal-fim {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    animation: fadeIn 0.5s ease forwards;
+}
+
+.modal-fim.ativo {
+    display: flex;
+}
+
+.conteudo-modal {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    animation: slideUp 0.5s ease forwards;
+}
+
+.conteudo-modal h2 {
+    margin-bottom: 10px;
+}
+
+.conteudo-modal button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #0003b6;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Css onde aparece a mensagem de parabéns na tela */
+.modal-fim {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    animation: fadeIn 0.5s ease forwards;
+}
+
+.modal-fim.ativo {
+    display: flex;
+}
+
+.conteudo-modal {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    animation: slideUp 0.5s ease forwards;
+}
+
+.conteudo-modal h2 {
+    margin-bottom: 10px;
+}
+
+.conteudo-modal button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #0003b6;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Cria animações personalizadas */
+@keyframes aparecetelaParabens {
+
+    /* No inicio a animação começa com opacidade 0 */
+    from {
+        opacity: 0;
+    }
+
+    /* No final a animação termina com opacidade 1 */
+    to {
+        opacity: 1;
+    }
+}
+
+/* faz a animação subir suavimente na tela no momento em que aparece */
+@keyframes subirATelaDeParabens {
+    from {
+        /* move-se 50 pixels para baixo */
+        transform: translateY(50px);
+        opacity: 0;
+    }
+
+    to {
+        /* Volta para a posição original de antes */
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+

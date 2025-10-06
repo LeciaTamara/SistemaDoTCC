@@ -1,0 +1,9 @@
+h1{
+        /*1rem para telas menores; 3.5vw para telas médias e grandes; 2 rem para telas que ultrapassa o valor médio(3.5vw)*/
+    font-size: clamp(1.3rem, 3.5vw, 2rem);
+}
+
+.paragrafo1,
+.paragrafo2{
+    font-size: clamp(1rem, 2.6vw, 2rem );
+}
