@@ -81,6 +81,8 @@ function mostrarLetraFigura() {
   const letraFigura = letras[indiceLetra];
   const texto = `Selecione a figura que começa com a letra: ${letraFigura.letra}`;
 
+  
+
   // Atualiza o texto visível
   const letraIndicada = document.getElementById('letraIndicada');
   if (letraIndicada) {
