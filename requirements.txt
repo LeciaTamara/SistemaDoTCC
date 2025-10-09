@@ -6,8 +6,7 @@ Django==5.2.6
 djangorestframework==3.16.1
 gTTS==2.5.4
 idna==3.10
-pydub==0.25.1
+pydub==0.24.1
 requests==2.32.5
 sqlparse==0.5.3
 urllib3==2.5.0
-pyaudioop
