@@ -207,7 +207,7 @@ const mostrarModalParabens = () => {
 
 // função para emitir o som da carta
 function clicarNaCarta(palavra, callback ) {
-    fetch('/nuncaetardeparaaprender/GerarAudioAPIView/', {
+    fetch('/GerarAudioAPIView/', {
         method : 'POST',
         headers : {
             'Content-Type': 'application/json',

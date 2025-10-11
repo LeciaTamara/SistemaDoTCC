@@ -80,9 +80,9 @@ function tocarAcertoOuErro(tipo){
     let som;
 
     if(tipo === 'acerto'){
-        som = '/static/js/somPrincipal/sound/acerto.mp3';
+        som = '/static/sound/acerto.mp3';
     }else if(tipo === 'erro'){
-        som = '/static/js/somPrincipal/sound/erro.mp3';
+        som = '/static/sound/erro.mp3';
     }
 
     const tocarSom = new Howl({
@@ -156,7 +156,7 @@ interact('.letraFixa').dropzone({
 });
 
 function clicarNaVogal(palavra){
-    fetch('/nuncaetardeparaaprender/GerarAudioAPIView/', {
+    fetch('/GerarAudioAPIView/', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function emitirSomDaImagem(palavra){
-    fetch('/nuncaetardeparaaprender/GerarAudioAPIView/', {
+    fetch('/GerarAudioAPIView/', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

@@ -2,7 +2,7 @@
 // a família silabica correspondente.
 //Essa função tem que fora do DOMContentLoaded, ou seja tem que ficar no escopo
     function familia(letra){
-        window.location.href = `/nuncaetardeparaaprender/familiaSilabica/?letra=${letra}`;
+        window.location.href = `familiaSilabica/?letra=${letra}`;
     }
 
 
@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function clicarNaSilaba(palavra){
-    fetch('/nuncaetardeparaaprender/GerarAudioAPIView/', {
+    fetch('/GerarAudioAPIView/', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

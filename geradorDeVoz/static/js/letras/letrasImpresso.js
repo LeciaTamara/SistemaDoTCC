@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () =>{
 
 function clicarNaLetra(palavra ) {
     // O método fetch envia uma para a api do django que emite o som
-    fetch('/nuncaetardeparaaprender/GerarAudioAPIView/',{
+    fetch('/GerarAudioAPIView/',{
         method: 'POST',
         // Cabeçalhos da requisição para a API
         headers: {
