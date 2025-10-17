@@ -85,7 +85,7 @@ const mostrarModalParabens = () => {
     botao.textContent = 'Continuar';
 
     //variável que recebe a url do django para ser redirecionado para a página
-    const voltarTrilha = document.getElementById('trilha').dataset.url;
+    const voltarTrilha = document.getElementById('trilha3').dataset.url;
     botao.addEventListener('click', () => {
         modal.remove();
         window.location.href = voltarTrilha;

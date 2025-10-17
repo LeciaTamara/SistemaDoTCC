@@ -47,8 +47,9 @@ class AlfabetoCursivoAPIView(APIView):
 
 @method_decorator(ensure_csrf_cookie, name='get')
 class FamiliaSilabicaAPIView(APIView):
-    def get(self, request):
-        return render(request, 'familiaSilabica/familiaSilabica.html')
+     def get(self, request):
+        letra = request.GET.get('letra')  # captura o parâmetro da URL
+        return render(request, 'familiaSilabica/familiaSilabica.html', {'letra': letra})
 
 @method_decorator(ensure_csrf_cookie, name='get')
 class VogalAPIView(APIView):
@@ -150,18 +151,20 @@ class GerarAudioAPIView(APIView):
             caminho = os.path.join(settings.MEDIA_ROOT, 'audios', f'{palavra}.mp3')
             os.makedirs(os.path.dirname(caminho), exist_ok=True)
 
-            # utiliza a biblioteca gTTS para transformar texto em fala
-            palavraTransformadaEmSom = gTTS(text=palavra, lang='pt')
-            palavraTransformadaEmSom.save(caminho)
+            # verifica se a palavra já existe
+            if not os.path.exists(caminho):
+                # utiliza a biblioteca gTTS para transformar texto em fala
+                palavraTransformadaEmSom = gTTS(text=palavra, lang='pt')
+                palavraTransformadaEmSom.save(caminho)
 
-            # Abrir com o pydub
-            som = AudioSegment.from_file(caminho, format="mp3")
+                # Abrir com o pydub
+                som = AudioSegment.from_file(caminho, format="mp3")
 
-            # aumentar o volume do áudio
-            audioAmplificado = som + 12
+                # aumentar o volume do áudio
+                audioAmplificado = som + 12
 
-            # sobreescrever o arquivo com o áudio amplificado
-            audioAmplificado.export(caminho, format="mp3", codec="libmp3lame")
+                # sobreescrever o arquivo com o áudio amplificado
+                audioAmplificado.export(caminho, format="mp3", codec="libmp3lame")
 
             som_url = f'{settings.MEDIA_URL}audios/{palavra}.mp3'
             return JsonResponse({'som_url':som_url})

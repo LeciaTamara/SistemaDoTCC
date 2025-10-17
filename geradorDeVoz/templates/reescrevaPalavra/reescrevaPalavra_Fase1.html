@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="{% static 'css/reescrevaFrase.css' %}">
     <link rel="stylesheet" href="{% static 'css/index.css' %}">
     <title>complete a palavra fase 1</title>
-    <script src="https://cdn.jsdelivr.net/npm/howler@2.2.4/dist/howler.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/howler@2.2.4/dist/howler.min.js" defer></script>
 </head>
 
 <body class="bg-info-subtle">
@@ -21,13 +21,13 @@
                 <!-- Linha 1: Botão Reproduzir + Botão Voltar -->
                 <div class="d-flex justify-content-between align-items-center mb-2">
                     <!-- Botão Reproduzir -->
-                    <button type="button" class="reproduzir" data-texto="Complete a palavra de acordo com a figura">
+                    <button type="button" aria-label="Ouvir texto que está escrito na tela" class="reproduzir" data-texto="Complete a palavra de acordo com a figura">
                         <i class="fs-3 text-primary bi bi-mic-fill"></i>
                     </button>
             
                     <!-- Botão Voltar -->
                     <div class="d-flex align-items-center">
-                        <button type="button" class="reproduzir" data-texto="Clique no link para voltar para a tela das trilhas">
+                        <button type="button" aria-label="Ouvir texto que está escrito na tela" class="reproduzir" data-texto="Clique no link para voltar para a tela das trilhas">
                             <i class="fs-3 text-primary bi bi-mic-fill"></i>
                         </button>
             
@@ -45,7 +45,7 @@
             </div>
             
             <div class="position-relative d-flex justify-content-center align-items-center p3 flex-column flex-md-row">
-                <button type="button" class="reproduzir"
+                <button type="button" aria-label="Ouvir texto que está escrito na tela" class="reproduzir"
                     data-texto="Clique na figura para escutar o seu som e identificar as letras que estão faltando para reescrever a palavra  completa dentro do quadro branco">
                     <i class="fs-3 text-primary bi bi-mic-fill"></i>
                 </button>
@@ -63,8 +63,10 @@
                     <div class="coluna1 col-12 col-md-6 ms-md-auto">
                         <div>
                             <img class="mt-3" id="lapis" src="{% static 'image/atividadeReecreverFrase/fase1/lapis.png' %}"
-                                alt="Lápis de escrever">
+                                alt="Lápis de escrever" loading="lazy">
                             <p class="fs-2 mt-3 mb-3">___ ___ PIS</p>
+
+                            <label for="input-lapis" class="visually-hidden">Escrever o nome da figura</label>
                             <input class="fs-1 border border-primary" type="text" name="" id="input-lapis">
                         </div>
             
@@ -72,8 +74,10 @@
             
                         <div>
                             <img class="mt-3" id="alicate" src="{% static 'image/atividadeReecreverFrase/fase1/alicate.png' %}"
-                                alt="Alicate">
+                                alt="Alicate" loading="lazy">
                             <p class="fs-2 mt-3 mb-3">ALI ___ ___TE</p>
+
+                            <label for="input-alicate" class="visually-hidden">Escrever o nome da figura</label>
                             <input class="fs-1 border border-primary" type="text" name="" id="input-alicate">
                         </div>
             
@@ -81,8 +85,10 @@
             
                         <div>
                             <img class="mt-3" id="celular" src="{% static 'image/atividadeReecreverFrase/fase1/celular.png' %}"
-                                alt="Celular">
+                                alt="Celular" loading="lazy">
                             <p class="fs-2 mt-3 mb-3">___ ___ LULAR </p>
+
+                            <label for="input-celular" class="visually-hidden">Escrever o nome da figura</label>
                             <input class="fs-1 border border-primary" type="text" name="" id="input-celular">
                         </div>
             
@@ -91,8 +97,9 @@
                     <div class="coluna2 col-12 col-md-6">
                         <div>
                             <img class="mt-3" id="medico" src="{% static '/image/atividadeReecreverFrase/fase1/medico.png' %}"
-                                alt="Médico">
+                                alt="Médico" loading="lazy">
                             <p class="fs-2 mt-3 mb-3">MEDI ___ ___</p>
+                            <label for="input-medico" class="visually-hidden">Escrever o nome da figura</label>
                             <input class="fs-1 border border-primary" type="text" name="" id="input-medico">
                         </div>
             
@@ -100,8 +107,10 @@
             
                         <div>
                             <img class="mt-3" id="relogio" src="{% static 'image/atividadeReecreverFrase/fase1/relogio.png' %}"
-                                alt="Relógio de pulso">
+                                alt="Relógio de pulso" loading="lazy">
                             <p class="fs-2 mt-3 mb-3">RE ___ ___ GIO</p>
+
+                            <label for="input-relogio" class="visually-hidden">Escrever o nome da figura</label>
                             <input class="fs-1 border border-primary" type="text " name="" id="input-relogio">
                         </div>
             
@@ -109,28 +118,30 @@
             
                         <div>
                             <img class="mt-3" id="moeda" src="{% static 'image/atividadeReecreverFrase/fase1/moeda.jpg' %}"
-                                alt="moedas">
+                                alt="moedas" loading="lazy">
                             <p class="fs-2 mt-3 mb-3">MOE ___ ___</p>
+
+                            <label for="input-moeda" class="visually-hidden">Escrever o nome da figura</label>
                             <input class="fs-1 border border-primary" type="text" name="" id="input-moeda">
                         </div>
             
                     </div>
             
-                    <!-- telas grandes -->
+                    <!-- telas grandes e médias -->
                     <div class="position-relative col col-lg-12 d-flex flex-column">
                         <div class="col-12 col-md-4">
                             <div class="position-relative d-flex d-none d-lg-flex justify-content-end align-items-end p3 flex-column flex-md-row mt-5"
                                 style="left: 5rem;">
                                 <nav class="navbar navbar-expand-lg ms-md-auto mt-2 mt-md-0">
 
-                                    <button type="button" class="reproduzir" data-texto="Clique no botão para avançar para a próxima atividade da trilha Complete as palavras com as letra que estão faltando - Fase 2">
+                                    <button type="button" aria-label="Ouvir texto que está escrito na tela" class="reproduzir" data-texto="Clique no botão para avançar para a fase 2 para a próxima atividade da trilha Complete as palavras com as letra que estão faltando - Fase 2">
                                         <i class="fs-3 text-primary bi bi-mic-fill"></i>
                                     </button>
 
-                                    <a href="{% url 'indexAPiView' %}" class="btn text-white fw-bold text-decoration-none"
+                                    <a href="{% url 'reescrevaPalavraFase2APIView' %}" class="btn text-white fw-bold text-decoration-none"
                                         style="background-color: #058002;"><i class="bi bi-arrow-right fs-1"></i>
                                         <br>
-                                        Avançar
+                                        Avançar para a fase 2
                                     </a>
                                 </nav>
                             </div>
@@ -140,15 +151,15 @@
                         <div class="d-flex d-lg-none justify-content-center">
                             <nav class="navbar navbar-expand-lg ms-md-auto mt-0 mt-md-0">
 
-                                <button type="button" class="reproduzir" data-texto="Clique no botão para avançar para a próxima atividade da trilha Complete as palavras com as letra que estão faltando - Fase 2">
+                                <button type="button" aria-label="Ouvir texto que está escrito na tela" class="reproduzir" data-texto="Clique no botão para avançar para a fase 2 para a próxima atividade da trilha Complete as palavras com as letra que estão faltando - Fase 2">
                                     <i class="fs-3 text-primary bi bi-mic-fill"></i>
                                 </button>
 
-                                <a href="{% url 'indexAPiView' %}" class="btn btn-sm text-white fw-bold text-decoration-none"
+                                <a href="{% url 'reescrevaPalavraFase2APIView' %}" class="btn btn-sm text-white fw-bold text-decoration-none"
                                     style="background-color: #058002;"><i class="bi bi-arrow-right fs-5"></i>
                                     <br>
                                     <br>
-                                    Avançar
+                                    Avançar para a fase 2
                                 </a>
                             </nav>
                         </div>
@@ -159,8 +170,8 @@
         </main>
     </div>
 
-    <script src="{% static 'js/javaScriptGenerico/principal.js' %}"></script>
-    <script src="{% static 'js/reescrevaFrase/reescrevaLetra.js' %}"></script>
+    <script src="{% static 'js/javaScriptGenerico/principal.js' %}" defer></script>
+    <script src="{% static 'js/reescrevaFrase/reescrevaLetra.js' %}" defer></script>
 </body>
 
 </html>

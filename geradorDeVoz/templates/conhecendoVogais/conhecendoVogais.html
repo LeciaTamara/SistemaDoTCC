@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="stylesheet" href="{% static 'css/vogais.css' %}">
     <link rel="stylesheet" href="{% static 'css/index.css' %}">
-    <title>Conhecendo as vogais</title>
+    <title>Conhecendo as letras vogais do alfabeto</title>
     <!--Usando o howler via CDN -->
     <script src="https://cdn.jsdelivr.net/npm/howler@2.2.4/dist/howler.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
@@ -25,13 +25,13 @@
                         <!-- Linha 1: Botão Reproduzir + Botão Voltar -->
                         <div class="d-flex justify-content-between align-items-center mb-2">
                             <!-- Botão Reproduzir -->
-                            <button type="button" class="reproduzir" data-texto="Letras vogais">
+                            <button type="button" aria-label="Ouvir texto que está escrito na tela" class="reproduzir" data-texto="Letras vogais">
                                 <i class="fs-3 text-primary bi bi-mic-fill"></i>
                             </button>
                     
                             <!-- Botão Voltar -->
                             <div class="d-flex align-items-center">
-                                <button type="button" class="reproduzir" data-texto="Clique no link para voltar para a tela das trilhas">
+                                <button type="button" aria-label="Ouvir texto que está escrito na tela" class="reproduzir" data-texto="Clique no link para voltar para a tela das trilhas">
                                     <i class="fs-3 text-primary bi bi-mic-fill"></i>
                                 </button>
                     
@@ -43,14 +43,12 @@
                     
                         <!-- Linha 2: Título -->
                         <h1 class="mb-0" style="color:#002b5c;">
-                            Letras vogais
+                            Letras vogais do alfabeto
                         </h1>
-                    
                     </div>
                 </div>
             </div>
         </header>
-    
 
         <main>
 
@@ -59,11 +57,10 @@
 
                     <div class="container mt-4">
                         <div class="row align-items-center">
-                    
-                            <!-- Botão -->
+
                             <!-- Botão -->
                             <div class="col-12 col-md-auto mb-3 mb-md-0 text-center text-md-start">
-                                <button type="button" class="reproduzir"
+                                <button type="button" aria-label="Ouvir texto que está escrito na tela" class="reproduzir"
                                     data-texto="Arraste cada letra do quadradinho azul até a sua vogal igual que está no quadradinho branco">
                                     <i class="fs-3 text-primary bi bi-mic-fill"></i>
                                 </button>
@@ -101,15 +98,14 @@
                 </div>
             </div>
 
-
             <div class="position-relative d-flex justify-content-center align-items-center p3 flex-column flex-md-row">
                 <nav class="navbar navbar-expand-lg ms-md-auto mt-2 mt-md-0">
 
-                    <button type="button" class="reproduzir" data-texto="Clique no botão para avançar para a próxima atividade da trilha relacionando Letra com Figuras">
+                    <button type="button" aria-label="Ouvir texto que está escrito na tela" class="reproduzir" data-texto="Clique no botão para avançar para a próxima atividade da trilha relacionando Letra com Figuras">
                         <i class="fs-3 text-primary bi bi-mic-fill"></i>
                     </button>
 
-                    <a href="{% url 'indexAPiView' %}" class="btn text-white fw-bold text-decoration-none" style="background-color: #058002;"><i
+                    <a href="{% url 'relacaoLetraFiguraApiView' %}" class="btn text-white fw-bold text-decoration-none" style="background-color: #058002;"><i
                             class="bi bi-arrow-right fs-1"></i>
                         <br>
                         Avançar

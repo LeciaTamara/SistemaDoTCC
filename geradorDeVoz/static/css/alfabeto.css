@@ -29,7 +29,7 @@ button.zoom {
     width: 100%;
     height: 80px;
     font-weight: bold;
-    color: white;
+    color: #000000;
     /* background-color: gray; */
     /* fallback */
     border: none;

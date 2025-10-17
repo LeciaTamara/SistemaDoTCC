@@ -1,13 +1,27 @@
 // função que pega a letra e redireciona para a família a outra tela para mostrar
 // a família silabica correspondente.
 //Essa função tem que fora do DOMContentLoaded, ou seja tem que ficar no escopo
-    function familia(letra){
-        window.location.href = `familiaSilabica/?letra=${letra}`;
-    }
+function familia(letra){
+    window.location.href = `/familiaSilabica/?letra=${letra}`;
+}
 
+function avancarFamilia() {
+    const letras = ['B','C','D','F','G','H','J','K','L','M','N','P','Q','R','S','T','V','X','Z'];
+    const parametro = new URLSearchParams(window.location.search);
+    const letraAtual = parametro.get('letra');
+    const indiceLetra = letras.indexOf(letraAtual);
+    const proximaLetra = letras[indiceLetra + 1];
+
+    if (proximaLetra) {
+        window.location.href = `/familiaSilabica/?letra=${proximaLetra}`;
+    } else {
+        //variável que recebe a url do django para ser redirecionado para a página do desafio2
+        const voltarTrilha = document.getElementById('desafio2').dataset.url;
+        window.location.href = voltarTrilha;
+    }
+}
 
 /*O document.addEvenListener espera até que a página HTML esteja completmente carregada para carregar o javaScript */
-
 document.addEventListener('DOMContentLoaded', () => {
     const familiasSilabica = {
        B: ['BA', 'BE', 'BI', 'BO', 'BU', 'BÃO'],
@@ -32,18 +46,37 @@ document.addEventListener('DOMContentLoaded', () => {
 
     }
 
+    const letrasComTextoBranco = ['F', 'H', 'J', 'K', 'M', 'P', 'R', 'Z'];
+
     const parametro = new URLSearchParams(window.location.search);
     const letra = parametro.get('letra');
 
+    // Atualiza o botão de microfone ao lado do botão "Avançar"
+    //Reproduz o som do botão avançar de acordo com a letra
+    const botaoReproduzirAvancar = document.getElementById('reproduzirAvancar');
+    if (botaoReproduzirAvancar && letra) {
+        if (letra === 'Z') {
+            botaoReproduzirAvancar.setAttribute('data-texto', 'Clique no botão para avançar para o desafio 2');
+        } else {
+            botaoReproduzirAvancar.setAttribute('data-texto', 'Clique no botão para avançar para a próxima família na trilha');
+        }
+    }
+
     const corBotao = `familia-${letra}`;
     const corTitulo = `titulo-${letra}`;
+    const silabaCor = `button-silaba-${letra}`;
 
     //reproduz o áudio do texto que está sendo criado pelo o javaScript
     const botaoReproduzirSom = document.querySelector('.reproduzir');
 
     if (botaoReproduzirSom && letra) {
-        const textoReproduzido = `Família${letra}`;
-        botaoReproduzirSom.setAttribute('data-texto', textoReproduzido);
+        if(letra === 'S'){
+            const textoReproduzido = `Família - ${letra}`;
+            botaoReproduzirSom.setAttribute('data-texto', textoReproduzido);
+        }else{
+            const textoReproduzido = `Família${letra}`;
+            botaoReproduzirSom.setAttribute('data-texto', textoReproduzido);
+        }
     }
 
     // coloca o título de cada família sílabica dinamicamete
@@ -60,7 +93,14 @@ document.addEventListener('DOMContentLoaded', () => {
             const botao = document.createElement("button");
             botao.type = "button"
             botao.textContent = silaba;
-            botao.classList.add('silaba', 'button-silaba', corBotao);
+            botao.classList.add('silaba', silabaCor, corBotao, 'button-silaba');
+            
+            if(letrasComTextoBranco.includes(letra)){
+                botao.classList.add('texto-branco');
+            }else{
+                botao.classList.add('texto-preto');
+            }
+            
             // const silabaDoDataTexto = familiaSilabicaAdaptada[silaba] || silaba;
             // botao.setAttribute('data-texto', silabaDoDataTexto)
             // botao.className = "silaba";
@@ -72,6 +112,8 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
         familiaCriada.textContent = "Familia não existe";
     }
+
+    const letraSom = parametro
 
 });
 

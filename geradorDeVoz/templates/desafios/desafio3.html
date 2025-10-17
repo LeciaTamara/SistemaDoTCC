@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="stylesheet" href="{% static 'css/desafio3.css' %}">
     <link rel="stylesheet" href="{% static 'css/index.css' %}">
-    <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/howler@2.2.4/dist/howler.min.js"></script>
     <title>Desafio 3</title>
 </head>
@@ -26,14 +26,14 @@
                         <!-- Linha 1: Botão Reproduzir + Botão Voltar -->
                         <div class="d-flex justify-content-between align-items-center mb-2">
                             <!-- Botão Reproduzir -->
-                            <button type="button" class="reproduzir"
+                            <button type="button" aria-label="Ouvir texto que está escrito na tela" class="reproduzir"
                                 data-texto="O Senhor José escreveu incorretamente o nome de sua filha.Em vez de escrever Maisa, ele escreveu Naisa. Qual é a forma correta de escrever o nome dela?">
                                 <i class="fs-3 text-primary bi bi-mic-fill"></i>
                             </button>
                     
                             <!-- Botão Voltar -->
                             <div class="d-flex align-items-center">
-                                <button type="button" class="reproduzir" data-texto="Clique no link para voltar para a tela das trilhas">
+                                <button type="button" aria-label="Ouvir texto que está escrito na tela" class="reproduzir" data-texto="Clique no link para voltar para a tela das trilhas">
                                     <i class="fs-3 text-primary bi bi-mic-fill"></i>
                                 </button>
                     
@@ -63,11 +63,11 @@
                     <div class="col-12 text-start mb-3">
                         <div class="position-relative d-flex justify-content-center align-items-center p3 flex-column flex-md-row">
                             
-                            <button type="button" class="reproduzir" data-texto="Arraste as letras para formar corretamente o nome da filha do Senhor José.">
+                            <button type="button" aria-label="Ouvir texto que está escrito na tela" class="reproduzir" data-texto="Arraste as letras para formar corretamente o nome da filha do Senhor José.">
                                 <i class="fs-3 text-primary bi bi-mic-fill"></i>
                             </button>
 
-                            <h3 class="text-primary">
+                            <h3 class="text-primary-emphasis fs-4">
                                 Arraste as letras para formar corretamente o nome da filha do Senhor José.
                             </h3>
 
@@ -86,7 +86,7 @@
                     </div>
 
                     <div class="col-12 text-center ">
-                        <button class="btn btn-primary my-2" onclick="verificarPalavra()">Enviar</button>
+                        <button class="btn btn-primary my-2" aria-label="Botão que verifica se a palavra está correta" onclick="verificarPalavra()">Enviar</button>
                     </div>
 
                     <!-- Card com alfabeto -->
@@ -102,10 +102,10 @@
     </div>
 
     <!-- data-url permite  que o modal do javaScript pegue a url do django para avançar para o desafio3-->
-    <div id="trilha" data-url="{% url 'indexAPiView' %}"></div>
+    <div id="trilha" data-url="{% url 'reescrevaPalavraFase1APIView' %}"></div>
 
-    <script src="{% static 'js/javaScriptGenerico/principal.js' %}"></script>
-    <script src="{% static 'js/desafio/desafio3.js' %}"></script>
+    <script src="{% static 'js/javaScriptGenerico/principal.js' %}" defer></script>
+    <script src="{% static 'js/desafio/desafio3.js' %}" defer></script>
 </body>
 
 </html>

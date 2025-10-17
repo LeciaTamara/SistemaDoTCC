@@ -22,7 +22,15 @@ document.addEventListener("DOMContentLoaded", function () {
       const fala = new SpeechSynthesisUtterance(texto);
       fala.lang = "pt-BR";
 
-      const vozPortugues = vozesDisponiveis.find(voz => voz.lang === "pt-BR");
+      //Vozes que tem preferência nos navegadores
+      const preferenciaDeVozes = [
+        "Google português do Brasil",
+        "Microsoft Maria - Portuguese (Brasil)",
+        "Luciana",
+        "Camila"
+      ];
+
+      const vozPortugues = vozesDisponiveis.find(voz => voz.lang === "pt-BR" && preferenciaDeVozes.includes(voz.name));
       if (vozPortugues) fala.voice = vozPortugues;
 
       speechSynthesis.speak(fala);

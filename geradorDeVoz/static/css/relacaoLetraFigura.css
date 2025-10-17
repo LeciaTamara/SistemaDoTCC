@@ -6,20 +6,26 @@
 @media (max-width: 576px){
     .imagens {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
         gap: 10px;
-        padding: 10px
+        padding: 10px;
+        box-sizing:border-box;
+        width: 100%;
     }
 
     .imagemFigura{
-        width: 90px;
-        margin: 5px;
+        width: 100%;
+        max-width: 90px;
+        margin: 5px auto;
+        object-fit: contain;
     }
 }
 
 .imagemFigura{
     width: 150px;
     margin: 10px;
+    height: auto;
+    object-fit: contain;
 }
 
 
@@ -36,4 +42,10 @@
 /* Cor do fundo da div onde está os botões */
 .bg-azulRei {
     background-color: #c4ffeb;
+}
+
+/* Card com limite de largura e controle de overflow */
+.card {
+    max-width: 100%;
+    overflow: hidden;
 }

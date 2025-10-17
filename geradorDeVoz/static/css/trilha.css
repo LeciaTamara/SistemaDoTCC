@@ -112,6 +112,38 @@
     background-color: #ffff00;
 }
 
+.bg-verdeEsmeralda{
+    background-color: #61e42d;
+}
+
+.bg-verdeEsmeralda:hover {
+    background-color: #61e42d;
+}
+
+.bg-verdeEscuro {
+    background-color: #227502;
+}
+
+.bg-verdeEscuro:hover {
+    background-color: #227502;
+}
+
+.bg-azulEscuro {
+    background-color: #023b66;
+}
+
+.bg-azulEscuro:hover {
+    background-color: #023b66;
+}
+
+.bg-azulClaro {
+    background-color: #008bb8;
+}
+
+.bg-azulClaro:hover {
+    background-color: #008bb8;
+}
+
 /* Classe para o botão */
 .desafio {
     font-size: 1rem;

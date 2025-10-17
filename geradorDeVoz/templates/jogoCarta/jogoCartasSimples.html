@@ -22,7 +22,7 @@
     
                     <!-- Grupo: botão + título -->
                     <div class="d-flex align-items-center gap-2">
-                        <button type="button" class="reproduzir" data-texto="Cartas das sílabas - Sílabas Simples">
+                        <button type="button" aria-label="Ouvir texto que está escrito na tela" class="reproduzir" data-texto="Cartas das sílabas - Sílabas Simples">
                             <i class="fs-3 text-primary bi bi-mic-fill"></i>
                         </button>
     
@@ -33,7 +33,7 @@
     
                     <!-- Botão Voltar à direita -->
                     <div class="d-flex flex-column align-items-end ms-auto">
-                        <button type="button" class="reproduzir"
+                        <button type="button" aria-label="Ouvir texto que está escrito na tela" class="reproduzir"
                             data-texto="Clique no botão para voltar para a tela das trilhas">
                             <i class="fs-3 text-primary bi bi-mic-fill"></i>
                         </button>
@@ -50,7 +50,7 @@
                 <div class="col-12">
                     <div class="position-relative pl-3">
 
-                        <button type="button" class="reproduzir" data-texto="Clique na carta e procure a carta que possui a figura que começa com a sílaba que está na
+                        <button type="button" aria-label="Ouvir texto que está escrito na tela" class="reproduzir" data-texto="Clique na carta e procure a carta que possui a figura que começa com a sílaba que está na
                                                     carta,ou procure a carta que possui a sílaba que começa com o nome da figura">
                             <i class="fs-3 text-primary bi bi-mic-fill"></i>
                         </button>
@@ -73,9 +73,9 @@
     </div>
 
     <!-- data-url permite  que o modal do javaScript pegue a url do django para avançar para o desafio3-->
-    <div id="trilha" data-url="{% url 'indexAPiView' %}"></div>
+    <div id="trilha" data-url="{% url 'silabaComplexaAPIView' %}"></div>
     
-    <script src="{% static 'js/javaScriptGenerico/principal.js' %}"></script>
-    <script src="{% static 'js/cartas/cartasSimples.js' %}"></script>
+    <script src="{% static 'js/javaScriptGenerico/principal.js' %}" defer></script>
+    <script src="{% static 'js/cartas/cartasSimples.js' %}" defer></script>
 </body>
 </html>

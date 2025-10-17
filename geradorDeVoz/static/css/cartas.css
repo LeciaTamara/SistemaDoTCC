@@ -80,8 +80,8 @@
 }
 
 .card.desabilitarCard .frente {
-    filter: saturate(5);
-    opacity: 0.9;
+    /* filter: saturate(5);
+    opacity: 0.9; */
 }
 
 /* Css onde aparece a mensagem de parabéns na tela */

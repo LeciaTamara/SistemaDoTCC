@@ -1,14 +1,9 @@
-.button-silaba {
-    /* NÃO use all: unset */
+/* Estilo base para todos os botões */
+.silaba {
     display: inline-block;
-    /* mantém lado a lado */
     min-width: 160px;
-    /* largura mínima */
     height: 80px;
-    /* margin: 5px; */
-    /* espaço entre botões */
     font-weight: bold;
-    color: white;
     background-color: #4CAF50;
     border: none;
     border-radius: 8px;
@@ -16,6 +11,20 @@
     text-align: center;
     transition: transform 0.3s ease;
     cursor: pointer;
+}
+
+#familia {
+    min-height: 100px;
+    /* ajuste conforme o conteúdo esperado */
+}
+
+/* Cor do texto */
+.texto-preto {
+    color: #000;
+}
+
+.texto-branco {
+    color: #fff;
 }
 
 /* Cor do título que muda de acordo com a letra */

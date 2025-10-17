@@ -20,14 +20,14 @@
                 <!-- Linha 1: Botão Reproduzir + Botão Voltar -->
                 <div class="d-flex justify-content-between align-items-center mb-2">
                     <!-- Botão Reproduzir -->
-                    <button type="button" class="reproduzir"
+                    <button type="button" aria-label="Ouvir texto que está escrito na tela" class="reproduzir"
                         data-texto="Dona Maria foi ao mercado com R$ 100, para comprar 2 kilos de coxa de frango que é R$12,00 cada kilo e 3 kilos de carne de porco que é R$20,00 cada kilo.">
                         <i class="fs-3 text-primary bi bi-mic-fill"></i>
                     </button>
             
                     <!-- Botão Voltar -->
                     <div class="d-flex align-items-center">
-                        <button type="button" class="reproduzir" data-texto="Clique no link para voltar para a tela das trilhas">
+                        <button type="button" aria-label="Ouvir texto que está escrito na tela" class="reproduzir" data-texto="Clique no link para voltar para a tela das trilhas">
                             <i class="fs-3 text-primary bi bi-mic-fill"></i>
                         </button>
             
@@ -47,11 +47,11 @@
             
             <div class="position-relative d-flex justify-content-center align-items-center p3 flex-column flex-md-row">
                 
-                <button type="button" class="reproduzir" data-texto="Quanto deu a compra de dona Maria? e quanto irá sobrar de troco para ela? Coloque as respostas da perguntas em cada um dos quadradinhos brancos">
+                <button type="button" aria-label="Ouvir texto que está escrito na tela" class="reproduzir" data-texto="Quanto deu a compra de dona Maria? e quanto irá sobrar de troco para ela? Coloque as respostas da perguntas em cada um dos quadradinhos brancos">
                     <i class="fs-3 text-primary bi bi-mic-fill"></i>
                 </button>
                 
-                <p class="ms-4 fs-2 text-primary">Quanto deu a compra de dona Maria? e quanto irá sobrar de troco para ela?</p>
+                <p class="ms-4 fs-2 text-primary-emphasis">Quanto deu a compra de dona Maria? e quanto irá sobrar de troco para ela?</p>
             </div>
         </header>
     
@@ -60,22 +60,26 @@
             <div class="row text-center">
                 <div class="col-lg-6 col-md-6 col-12">
                     
-                    <button type="button" class="reproduzir" data-texto="Valor da compra de Dona Maria, coloque a resposta nesse quadradinho branco">
+                    <button type="button" aria-label="Ouvir texto que está escrito na tela" class="reproduzir" data-texto="Valor da compra de Dona Maria, coloque a resposta nesse quadradinho branco">
                         <i class="fs-3 text-primary bi bi-mic-fill"></i>
                     </button>
 
                     <p class="paragrafo1 mt-3 mb-3">Valor da compra de Dona Maria</p>
+
+                    <label for="desafio2" class="visually-hidden">Resultado do valor da compra de Dona Maria</label>
                     <input class="w-25 border border-primary" type="number" name="" id="desafio2">
                 </div>
             
                 <div class="col-lg-6 col-md-6 col-12 mt-3 mt-sm-0">
 
-                    <button type="button" class="reproduzir"
+                    <button type="button" aria-label="Ouvir texto que está escrito na tela" class="reproduzir"
                         data-texto="Valor do troco de Dona Maria, coloque a resposta nesse quadradinho branco">
                         <i class="fs-3 text-primary bi bi-mic-fill"></i>
                     </button>
 
                     <p class="paragrafo2 mt-3 mb-3">Valor do troco de Dona Maria</p>
+
+                    <label for="desafio2_1" class="visually-hidden">Resultado do valor do troco de Dona Maria</label>
                     <input class="w-25 border border-primary" type="number" name="" id="desafio2_1">
                 </div>
             </div>
@@ -83,7 +87,7 @@
             <!-- Botão em telas médias -->
             <div class="d-none d-md-flex d-lg-none justify-content-center align-items-start gap-3 mt-5 w-50" style="margin-left: 55%;">
 
-                <button type="button" class="reproduzir mt-5" data-texto="avançar" style="height: 40px;">
+                <button type="button" aria-label="Ouvir texto que está escrito na tela" class="reproduzir mt-5" data-texto="avançar para a trilha" style="height: 40px;">
                     <i class="fs-3 text-primary bi bi-mic-fill"></i>
                 </button>
 
@@ -96,7 +100,7 @@
             <!-- Botão em telas grandes -->
             <div class="d-none d-md-none d-lg-flex justify-content-center align-items-start gap-3 mt-5 w-50" style="margin-left: 65%;">
             
-                <button type="button" class="reproduzir mt-5" data-texto="avançar">
+                <button type="button" aria-label="Ouvir texto que está escrito na tela" class="reproduzir mt-5" data-texto="avançar para a trilha">
                     <i class="fs-3 bi bi-mic-fill text-primary"></i>
                 </button>
             
@@ -114,7 +118,7 @@
                 <div class="row justify-content-center mt-5">
                     <div class="col-12 col-md-6 d-flex justify-content-center">
 
-                        <button type="button" class="reproduzir mt-3" data-texto="avançar" style="height: 40px;">
+                        <button type="button" aria-label="Ouvir texto que está escrito na tela" class="reproduzir mt-3" data-texto="avançar para a trilha" style="height: 40px;">
                             <i class="fs-3 text-primary bi bi-mic-fill"></i>
                         </button>
 

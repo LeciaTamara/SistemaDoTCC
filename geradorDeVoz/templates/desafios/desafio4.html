@@ -22,14 +22,14 @@
                         <!-- Linha 1: Botão Reproduzir + Botão Voltar -->
                         <div class="d-flex justify-content-between align-items-center mb-2">
                             <!-- Botão Reproduzir -->
-                            <button type="button" class="reproduzir"
+                            <button type="button" aria-label="Ouvir texto que está escrito na tela" class="reproduzir"
                                 data-texto="Dona Ana tentou organizar o alfabeto corretamente. Será que ela conseguiu?">
                                 <i class="fs-3 text-primary bi bi-mic-fill"></i>
                             </button>
                     
                             <!-- Botão Voltar -->
                             <div class="d-flex align-items-center">
-                                <button type="button" class="reproduzir" data-texto="Clique no link para voltar para a tela das trilhas">
+                                <button type="button" aria-label="Ouvir texto que está escrito na tela" class="reproduzir" data-texto="Clique no link para voltar para a tela das trilhas">
                                     <i class="fs-3 text-primary bi bi-mic-fill"></i>
                                 </button>
                     
@@ -48,12 +48,12 @@
 
                     <div class="position-relative d-flex justify-content-start align-items-start p2 flex-column flex-md-row mt-3">
 
-                        <button type="button" class="reproduzir" data-texto="Se a sequência não estiver correta, ajude a colocar a letra na ordem certa arrastando a letra e colocando no lugar certo">
+                        <button type="button" aria-label="Ouvir texto que está escrito na tela" class="reproduzir" data-texto="Se a sequência não estiver correta, ajude a colocar as letras na ordem certa, arrastando as letras e colocando no lugar certo">
                             <i class="fs-3 text-primary bi bi-mic-fill"></i>
                         </button>
 
-                        <h3 class="text-primary">
-                            Se a sequência não estiver correta, ajude a colocar a letra na ordem certa arrastando a letra e colocando no lugar certo
+                        <h3 class="text-primary-emphasis">
+                            Se a sequência não estiver correta, ajude a colocar as letras na ordem certa, arrastando as letras e colocando no lugar certo
                         </h3>
 
                     </div>
@@ -66,11 +66,11 @@
 
                 <div class="d-flex align-items-center gap-2 mt-4">
                    
-                    <button type="button" class="reproduzir" data-texto="Exemplo do alfabeto que Dona Ana ordenou:">
+                    <button type="button" aria-label="Ouvir texto que está escrito na tela" class="reproduzir" data-texto="Exemplo do alfabeto que Dona Ana ordenou:">
                         <i class="fs-3 text-primary bi bi-mic-fill"></i>
                     </button>
                 
-                    <p class="mb-0 text-primary">Exemplo do alfabeto que Dona Ana ordenou:</p>
+                    <p class="mb-0 text-primary-emphasis fs-4">Exemplo do alfabeto que Dona Ana ordenou:</p>
                 </div>
 
                 <div class="card mt-2 mb-5 bg-azulRei border border-info rounded-4">
@@ -83,12 +83,12 @@
     </div>
 
     <!-- data-url permite  que o modal do javaScript pegue a url do django para avançar para o desafio3-->
-    <div id="trilha" data-url="{% url 'indexAPiView' %}"></div>
+    <div id="trilha3" data-url="{% url 'silabaSimpleAPIView' %}"></div>
     
     <script src="{% static 'js/javaScriptGenerico/principal.js' %}"></script>
 
     <!-- Permite misturar as letras do alfabeto -->
-    <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js" defer></script>
     <script src="{% static 'js/desafio/desafio4.js' %}"></script>
     
 
