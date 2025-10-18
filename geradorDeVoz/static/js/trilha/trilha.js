@@ -1,61 +1,98 @@
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll('.reproduzir').forEach(botao => {
+    if (botao.offsetParent !== null) { // só adiciona se estiver visível
+      botao.addEventListener('click', () => {
+        const texto = botao.dataset.texto?.trim();
+        if (!texto) return;
 
-function pegarId(id){
-    const idTagHtml = document.getElementById(id);
-    return idTagHtml ? idTagHtml.textContent.trim(): "";
-}
+        fetch('/GerarAudioAPIView/', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'X-CSRFToken': getCookie('csrftoken')
+          },
+          body: JSON.stringify({ palavra: texto })
+        })
+        .then(response => response.json())
+        .then(data => {
+          if (data.som_url) {
+            const audio = new Audio(data.som_url);
+            audio.play().catch(err => {
+              console.error("Erro ao reproduzir áudio:", err);
+            });
+          } else {
+            console.error('Erro ao obter áudio:', data.erro);
+          }
+        })
+        .catch(error => {
+          console.error('Erro na requisição:', error);
+        });
+      });
+    }
+  });
+
+
+  document.querySelectorAll('.posicaoBotao').forEach(container => {
+    const botao = container.querySelector('.reproduzir');
+    const animacao = container.querySelector('.animacao');
+
+    if (botao && animacao) {
+      botao.addEventListener('click', () => {
+        if (typeof animacao.stop === 'function') {
+          animacao.stop();
+        }
+        animacao.style.display = 'none';
+      });
+    }
+  });
+
+});
 
 function reproduzirSom(id) {
-   const texto = pegarId(id);
-   if (!texto){
-    return;
-   } 
+  const elemento = document.getElementById(id);
+  const texto = elemento?.dataset?.texto?.trim() || elemento?.textContent?.trim();
 
-   const fala = new SpeechSynthesisUtterance(texto);
-   fala.lang = "pt-BR";
+  if (!texto) return;
 
-   const vozes = speechSynthesis.getVoices();
-   const vozPortugues = vozes.find(voz => voz.lang === "pt-BR");
-   if(vozPortugues){
-    fala.voice = vozPortugues;
-   }
-
-   speechSynthesis.speak(fala);
+  fetch('/GerarAudioAPIView/', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'X-CSRFToken': getCookie('csrftoken')
+    },
+    body: JSON.stringify({ palavra: texto })
+  })
+  .then(response => response.json())
+  .then(data => {
+    if (data.som_url) {
+      const audio = new Audio(data.som_url);
+      audio.play().catch(err => {
+        console.error("Erro ao reproduzir áudio:", err);
+      });
+    } else {
+      console.error('Erro ao obter áudio:', data.erro);
+    }
+  })
+  .catch(error => {
+    console.error('Erro na requisição:', error);
+  });
 }
 
-document.querySelectorAll('.reproduzir').forEach(botao => {
-  botao.addEventListener('click', () => {
-    const texto = botao.dataset.texto;
-    if (!texto) return;
-
-    const fala = new SpeechSynthesisUtterance(texto);
-    fala.lang = "pt-BR";
-
-    const vozes = speechSynthesis.getVoices();
-    const vozPortugues = vozes.find(voz => voz.lang === "pt-BR");
-    if (vozPortugues) {
-      fala.voice = vozPortugues;
-    }
-
-    speechSynthesis.speak(fala);
-  });
-});
-
-//reproduz o som que vem do data-texto
-document.addEventListener("DOMContentLoaded", function () {
-    document.querySelectorAll('.posicaoBotao').forEach(container => {
-        const botao = container.querySelector('.reproduzir');
-        const animacao = container.querySelector('.animacao');
-
-        if (botao && animacao) {
-            botao.addEventListener('click', () => {
-                if (typeof animacao.stop === 'function') {
-                    animacao.stop();
-                }
-                animacao.style.display = 'none';
-            });
+function getCookie(name) {
+    let cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+      const cookies = document.cookie.split(';');
+      for (let i = 0; i < cookies.length; i++) {
+        const cookie = cookies[i].trim();
+        if (cookie.substring(0, name.length + 1) === (name + '=')) {
+          cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+          break;
         }
-    });
-});
+      }
+    }
+    return cookieValue;
+  }
+
 
 // animação da mão
 document.addEventListener("DOMContentLoaded", function () {
@@ -95,13 +132,3 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
-
-
-
-
-// setTimeout(() => {
-//     const animacao = document.getElementById('animacaClique');
-//     if (animacao) {
-//         animacao.stop()
-//     }
-// }, 5000);

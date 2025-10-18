@@ -56,7 +56,7 @@
                     <div class="col-12 mt-5">
 
                         <div class="d-flex justify-content-center align-items-center gap-2">
-                            <button type="button" aria-label="Ouvir texto que está escrito na tela" onclick="reproduzirSom('trilhaAlfabeto')" class="reproduzir" data-texto="Conhecendo o alfabeto e suas formas de escritas: Clique nos círculos para acessar cada atividade da trilha conhecendo o alfabeto">
+                            <button type="button" aria-label="Ouvir texto que está escrito na tela" class="reproduzir" data-texto="Conhecendo o alfabeto e suas formas de escritas: Clique nos círculos para acessar cada atividade da trilha conhecendo o alfabeto">
                                 <i class=" text-primary bi bi-mic-fill"></i>
                             </button>
 
@@ -134,11 +134,11 @@
                         </ul>
                         
                         <div class="d-flex justify-content-center align-items-center gap-2">
-                            <button type="button" aria-label="Ouvir texto que está escrito na tela" onclick="reproduzirSom('trilhaVogal')" class="reproduzir" data-texto="Conhecendo as letras vogais do alfabeto: clique no círculo para acessar a atividade">
+                            <button type="button" aria-label="Ouvir texto que está escrito na tela" class="reproduzir" data-texto="Conhecendo as letras vogais do alfabeto: Clique no círculo para acessar a atividade" >
                                 <i class=" text-primary bi bi-mic-fill"></i>
                             </button>
                         
-                            <h3 style="color: blue;" id="trilhaVogal">Conhecendo as letras vogais do alfabeto</h3>
+                            <h3 style="color: blue;">Conhecendo as letras vogais do alfabeto</h3>
                         </div>
                         <ul class="timeline">
                             <li>
@@ -167,11 +167,11 @@
                         </ul>
 
                         <div class="d-flex justify-content-center align-items-center gap-2">
-                            <button type="button" aria-label="Ouvir texto que está escrito na tela" onclick="reproduzirSom('trilhaLetraFigura')" class="reproduzir" data-texto="Relacionando Letra com Figuras: Clique no círculo para acessar a atividade">
+                            <button type="button" aria-label="Ouvir texto que está escrito na tela" class="reproduzir" data-texto="Relacionando Letra com Figuras: Clique no círculo para acessar a atividade">
                                 <i class=" text-primary bi bi-mic-fill"></i>
                             </button>
                         
-                            <h3 style="color: blue;" id="trilhaLetraFigura">Relacionando Letra com Figuras</h3>
+                            <h3 style="color: blue;">Relacionando Letra com Figuras</h3>
                         </div>
                         <ul class="timeline">
                             <li>
@@ -231,7 +231,7 @@
                         <div class="position-relative d-flex justify-content-center align-items-center p-3 flex-column flex-md-row">
                     
                             <!-- Título centralizado -->
-                            <button type="button" aria-label="Ouvir texto que está escrito na tela" onclick="reproduzirSom('trilha2')" class="reproduzir" data-texto="Bem-vindo à trilha 2: Conhecendo as sílabas">
+                            <button type="button" aria-label="Ouvir texto que está escrito na tela" class="reproduzir" data-texto="Bem-vindo à trilha 2. Conhecendo as sílabas">
                                 <i class="fs-3 text-primary bi bi-mic-fill"></i>
                             </button>
                     
@@ -263,7 +263,7 @@
 
                                 <div class="timeline-image">
                                     <button type="button" aria-label="Letra B" onclick="familia('B')"
-                                        class="btn btn-primary text-dark w-100 h-100 d-flex align-items-center justify-content-center rounded-circle bg-info" id="familiaB">Família
+                                        class="btn btn-primary text-dark w-100 h-100 d-flex align-items-center justify-content-center rounded-circle bg-info" id="familiaB" data-texto="Família B">Família
                                         B
                                     </button>
                                 </div>
@@ -288,7 +288,7 @@
 
                                 <div class="timeline-image">
                                     <button type="button" aria-label="Letra C" onclick="familia('C')"
-                                        class="btn btn-primary text-dark w-100 h-100 d-flex align-items-center justify-content-center rounded-circle bg-info" id="familiaC">Família
+                                        class="btn btn-primary text-dark w-100 h-100 d-flex align-items-center justify-content-center rounded-circle bg-info" id="familiaC" data-texto="Família C">Família
                                         C</button>
                                 </div>
 
@@ -312,7 +312,7 @@
 
                                 <div class="timeline-image">
                                     <button type="button" aria-label="Letra D" onclick="familia('D')"
-                                        class="btn btn-primary text-dark w-100 h-100 d-flex align-items-center justify-content-center rounded-circle bg-info" id="familiaD">Família
+                                        class="btn btn-primary text-dark w-100 h-100 d-flex align-items-center justify-content-center rounded-circle bg-info" id="familiaD" data-texto="Família D">Família
                                         D</button>
                                 </div>
 
@@ -335,7 +335,7 @@
 
                                 <div class="timeline-image">
                                     <button type="button" aria-label="Letra F" onclick="familia('F')"
-                                        class="btn btn-primary text-dark w-100 h-100 d-flex align-items-center justify-content-center rounded-circle bg-info" id="familiaF">Família
+                                        class="btn btn-primary text-dark w-100 h-100 d-flex align-items-center justify-content-center rounded-circle bg-info" id="familiaF" data-texto="Família F">Família
                                         F</button>
                                 </div>
 
@@ -359,7 +359,7 @@
 
                                 <div class="timeline-image">
                                     <button type="button" aria-label="Letra G" onclick="familia('G')"
-                                        class="btn btn-primary text-dark w-100 h-100 d-flex align-items-center justify-content-center rounded-circle bg-info" id="familiaG">Família
+                                        class="btn btn-primary text-dark w-100 h-100 d-flex align-items-center justify-content-center rounded-circle bg-info" id="familiaG" data-texto="Família G">Família
                                         G</button>
                                 </div>
 
@@ -383,7 +383,7 @@
 
                                 <div class="timeline-image">
                                     <button type="button" aria-label="Letra H" onclick="familia('H')"
-                                        class="btn btn-primary text-dark w-100 h-100 d-flex align-items-center justify-content-center rounded-circle bg-info" id="familiaH">Família
+                                        class="btn btn-primary text-dark w-100 h-100 d-flex align-items-center justify-content-center rounded-circle bg-info" id="familiaH" data-texto="Família H">Família
                                         H</button>
                                 </div>
 
@@ -407,7 +407,7 @@
 
                                 <div class="timeline-image">
                                     <button type="button" aria-label="Letra J" onclick="familia('J')"
-                                        class="btn btn-primary text-dark w-100 h-100 d-flex align-items-center justify-content-center rounded-circle bg-info" id="familiaJ">Família
+                                        class="btn btn-primary text-dark w-100 h-100 d-flex align-items-center justify-content-center rounded-circle bg-info" id="familiaJ" data-texto="Família J">Família
                                         J</button>
                                 </div>
 
@@ -431,7 +431,7 @@
 
                                 <div class="timeline-image">
                                     <button type="button" aria-label="Ouvir texto que está escrito na tela" onclick="familia('K')"
-                                        class="btn btn-primary text-dark w-100 h-100 d-flex align-items-center justify-content-center rounded-circle bg-info" id="familiaK">Família
+                                        class="btn btn-primary text-dark w-100 h-100 d-flex align-items-center justify-content-center rounded-circle bg-info" id="familiaK" data-texto="Família K">Família
                                         K</button>
                                 </div>
 
@@ -455,7 +455,7 @@
 
                                 <div class="timeline-image">
                                     <button type="button" aria-label="Letra L" onclick="familia('L')"
-                                        class="btn btn-primary text-dark w-100 h-100 d-flex align-items-center justify-content-center rounded-circle bg-info" id="familiaL">Família
+                                        class="btn btn-primary text-dark w-100 h-100 d-flex align-items-center justify-content-center rounded-circle bg-info" id="familiaL" data-texto="Família L">Família
                                         L</button>
                                 </div>
 
@@ -479,7 +479,7 @@
 
                                 <div class="timeline-image">
                                     <button type="button" aria-label="Letra M" onclick="familia('M')"
-                                        class="btn btn-primary text-dark w-100 h-100 d-flex align-items-center justify-content-center rounded-circle bg-info" id="familiaM">Família
+                                        class="btn btn-primary text-dark w-100 h-100 d-flex align-items-center justify-content-center rounded-circle bg-info" id="familiaM" data-texto="Família M">Família
                                         M</button>
                                 </div>
 
@@ -503,7 +503,7 @@
 
                                 <div class="timeline-image">
                                     <button type="button" aria-label="Letra N" onclick="familia('N')"
-                                        class="btn btn-primary text-dark w-100 h-100 d-flex align-items-center justify-content-center rounded-circle bg-info" id="familiaN">Família
+                                        class="btn btn-primary text-dark w-100 h-100 d-flex align-items-center justify-content-center rounded-circle bg-info" id="familiaN" data-texto="Família N">Família
                                         N</button>
                                 </div>
 
@@ -527,7 +527,7 @@
 
                                 <div class="timeline-image">
                                     <button type="button" aria-label="Letra P" onclick="familia('P')"
-                                        class="btn btn-primary text-dark w-100 h-100 d-flex align-items-center justify-content-center rounded-circle bg-info" id="familiaP">Família
+                                        class="btn btn-primary text-dark w-100 h-100 d-flex align-items-center justify-content-center rounded-circle bg-info" id="familiaP" data-texto="Família P">Família
                                         P</button>
                                 </div>
 
@@ -551,7 +551,7 @@
 
                                 <div class="timeline-image">
                                     <button type="button" aria-label="Letra Q" onclick="familia('Q')"
-                                        class="btn btn-primary text-dark w-100 h-100 d-flex align-items-center justify-content-center rounded-circle bg-info" id="familiaQ">Família
+                                        class="btn btn-primary text-dark w-100 h-100 d-flex align-items-center justify-content-center rounded-circle bg-info" id="familiaQ" data-texto="Família Q">Família
                                         Q</button>
                                 </div>
 
@@ -575,7 +575,7 @@
 
                                 <div class="timeline-image">
                                     <button type="button" aria-label="Letra R" onclick="familia('R')"
-                                        class="btn btn-primary text-dark w-100 h-100 d-flex align-items-center justify-content-center rounded-circle bg-info" id="familiaR">Família
+                                        class="btn btn-primary text-dark w-100 h-100 d-flex align-items-center justify-content-center rounded-circle bg-info" id="familiaR" data-texto="Família R">Família
                                         R</button>
                                 </div>
 
@@ -599,7 +599,7 @@
 
                                 <div class="timeline-image">
                                     <button type="button" aria-label="Letra S" onclick="familia('S')"
-                                        class="btn btn-primary text-dark w-100 h-100 d-flex align-items-center justify-content-center rounded-circle bg-info" id="familiaS">Família
+                                        class="btn btn-primary text-dark w-100 h-100 d-flex align-items-center justify-content-center rounded-circle bg-info" id="familiaS" data-texto="Família S">Família
                                         S</button>
                                 </div>
 
@@ -623,7 +623,7 @@
 
                                 <div class="timeline-image">
                                     <button type="button" aria-label="Letra T" onclick="familia('T')"
-                                        class="btn btn-primary text-dark w-100 h-100 d-flex align-items-center justify-content-center rounded-circle bg-info" id="familiaT">Família
+                                        class="btn btn-primary text-dark w-100 h-100 d-flex align-items-center justify-content-center rounded-circle bg-info" id="familiaT" data-texto="Família T">Família
                                         T</button>
                                 </div>
 
@@ -647,7 +647,7 @@
 
                                 <div class="timeline-image">
                                     <button type="button" aria-label="Letra V" onclick="familia('V')"
-                                        class="btn btn-primary text-dark w-100 h-100 d-flex align-items-center justify-content-center rounded-circle bg-info" id="familiaV">Família
+                                        class="btn btn-primary text-dark w-100 h-100 d-flex align-items-center justify-content-center rounded-circle bg-info" id="familiaV" data-texto="Família V">Família
                                         V</button>
                                 </div>
 
@@ -671,7 +671,7 @@
 
                                 <div class="timeline-image">
                                     <button type="button" aria-label="Letra X" onclick="familia('X')"
-                                        class="btn btn-primary text-dark w-100 h-100 d-flex align-items-center justify-content-center rounded-circle bg-info" id="familiaX">Família
+                                        class="btn btn-primary text-dark w-100 h-100 d-flex align-items-center justify-content-center rounded-circle bg-info" id="familiaX" data-texto="Família X">Família
                                         X</button>
                                 </div>
 
@@ -695,7 +695,7 @@
 
                                 <div class="timeline-image">
                                     <button type="button" aria-label="Letra Z" onclick="familia('Z')"
-                                        class="btn btn-primary text-dark w-100 h-100 d-flex align-items-center justify-content-center rounded-circle bg-info" id="familiaZ">Família
+                                        class="btn btn-primary text-dark w-100 h-100 d-flex align-items-center justify-content-center rounded-circle bg-info" id="familiaZ" data-texto="Família Z">Família
                                         Z</button>
                                 </div>
 
@@ -741,12 +741,12 @@
                         <div class="position-relative d-flex justify-content-center align-items-center p-3 flex-column flex-md-row">
 
                             <!-- Título centralizado -->
-                            <button type="button" aria-label="Ouvir texto que está escrito na tela" onclick="reproduzirSom('trilha3')" class="reproduzir" data-texto="Bem-vindo à trilha 3: Associando sílabas e imagens">
+                            <button type="button" aria-label="Ouvir texto que está escrito na tela" class="reproduzir" data-texto="Bem-vindo à trilha 3. Associando sílabas e imagens">
                                 <i class="fs-3 text-primary bi bi-mic-fill"></i>
                             </button>
 
                             <!-- Título centralizado -->
-                            <h1 class="card-title text-white mb-0 text-center flex-grow-1" id="trilha3" class="reproduzir" data-texto="Clique no círculo para acessar a atividade">
+                            <h1 class="card-title text-white mb-0 text-center flex-grow-1">
                                 Bem-vindo à trilha 3: Associando sílabas e imagens
                             </h1>
                         </div>
@@ -766,7 +766,7 @@
 
                                 <div class="d-md-flex d-lg-none position-relative d-flex justify-content-center align-items-center gap-2"
                                     style="right: 6%;">
-                                    <button type="button" aria-label="Ouvir texto que está escrito na tela" onclick="reproduzirSom('cartaSimplesFase1')">
+                                    <button type="button" aria-label="Ouvir texto que está escrito na tela" class="reproduzir" data-texto="Sílaba e imagem fase 1">
                                         <i class=" text-primary bi bi-mic-fill"></i>
                                     </button>
                                 </div>
@@ -782,7 +782,7 @@
 
                                 <div class="d-none d-md-none d-lg-flex position-relative d-flex justify-content-center align-items-center gap-2"
                                     style="right: 6%;">
-                                    <button type="button" aria-label="Ouvir texto que está escrito na tela" onclick="reproduzirSom('cartaSimplesFase1')">
+                                    <button type="button" aria-label="Ouvir texto que está escrito na tela" class="reproduzir" data-texto="Sílaba e imagem fase 1">
                                         <i class=" text-primary bi bi-mic-fill"></i>
                                     </button>
                                 </div>
@@ -802,7 +802,7 @@
 
                                 <div class="d-md-flex d-lg-none position-relative d-flex justify-content-center align-items-center gap-2"
                                     style="right: 6%;">
-                                    <button type="button" aria-label="Ouvir texto que está escrito na tela" onclick="reproduzirSom('cartaComplexaFase2')">
+                                    <button type="button" aria-label="Ouvir texto que está escrito na tela" class="reproduzir" data-texto="Sílaba e imagem fase 2">
                                         <i class=" text-primary bi bi-mic-fill"></i>
                                     </button>
                                 </div>
@@ -818,7 +818,7 @@
 
                                 <div class="d-none d-md-none d-lg-flex position-relative d-flex justify-content-center align-items-center gap-2"
                                     style="right: 6%;">
-                                    <button type="button" aria-label="Ouvir texto que está escrito na tela" onclick="reproduzirSom('cartaComplexaFase2')">
+                                    <button type="button" aria-label="Ouvir texto que está escrito na tela" class="reproduzir" data-texto="Sílaba e imagem fase 2">
                                         <i class=" text-primary bi bi-mic-fill"></i>
                                     </button>
                                 </div>
@@ -882,7 +882,7 @@
 
                                 <div class="d-md-flex d-lg-none position-relative d-flex justify-content-center align-items-center gap-2"
                                     style="right: 6%;">
-                                    <button type="button" aria-label="Ouvir texto que está escrito na tela" onclick="reproduzirSom('completandoPalavraFase1')">
+                                    <button type="button" aria-label="Ouvir texto que está escrito na tela" class="reproduzir" data-texto="Complete as palavras">
                                         <i class=" text-primary bi bi-mic-fill"></i>
                                     </button>
                                 </div>
@@ -898,7 +898,7 @@
 
                                 <div class="d-none d-md-none d-lg-flex position-relative d-flex justify-content-center align-items-center gap-2"
                                     style="right: 6%;">
-                                    <button type="button" aria-label="Ouvir texto que está escrito na tela" onclick="reproduzirSom('completandoPalavraFase1')">
+                                    <button type="button" aria-label="Ouvir texto que está escrito na tela" class="reproduzir" data-texto="Complete as palavras">
                                         <i class=" text-primary bi bi-mic-fill"></i>
                                     </button>
                                 </div>
@@ -918,7 +918,7 @@
 
                                 <div class="d-md-flex d-lg-none position-relative d-flex justify-content-center align-items-center gap-2"
                                     style="right: 6%;">
-                                    <button type="button" aria-label="Ouvir texto que está escrito na tela" onclick="reproduzirSom('completandoPalavraFase2')">
+                                    <button type="button" aria-label="Ouvir texto que está escrito na tela" class="reproduzir" data-texto="Complete as palavras">
                                         <i class=" text-primary bi bi-mic-fill"></i>
                                     </button>
                                 </div>
@@ -934,7 +934,7 @@
 
                                 <div class="d-none d-md-none d-lg-flex position-relative d-flex justify-content-center align-items-center gap-2"
                                     style="right: 6%;">
-                                    <button type="button" aria-label="Ouvir texto que está escrito na tela" onclick="reproduzirSom('completandoPalavraFase2')">
+                                    <button type="button" aria-label="Ouvir texto que está escrito na tela" class="reproduzir" data-texto="Complete as palavras">
                                         <i class=" text-primary bi bi-mic-fill"></i>
                                     </button>
                                 </div>
@@ -971,7 +971,7 @@
         </main>
     </div>
 
-    <script src="{% static 'js/javaScriptGenerico/principal.js' %}" defer></script>
+    <!-- <script src="{% static 'js/javaScriptGenerico/principal.js' %}" defer></script> -->
     <script src="{% static 'js/trilha/trilha.js' %}" defer></script>
     <script src="{% static 'js/silabas/familiaSilabica.js' %}" defer></script>
 </body>

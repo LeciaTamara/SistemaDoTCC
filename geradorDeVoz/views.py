@@ -9,6 +9,8 @@ from gtts import gTTS
 import io
 import traceback
 from pydub import AudioSegment
+import re
+from unidecode import unidecode
 
 #importações utilizadas pelo o rest framework
 from rest_framework.views import APIView
@@ -132,6 +134,11 @@ class Desafio1APiView(APIView):
     def get(self, request):
         return render(request, "desafios/desafio1.html")
 
+def limpar_nome(texto):
+    texto = unidecode(texto)  # remove acentos
+    texto = re.sub(r'[^\w\s-]', '', texto)  # remove pontuação
+    texto = re.sub(r'\s+', '_', texto)  # substitui espaços por _
+    return texto.strip().lower()
 
 # Api que gera o áudio  
 method_decorator(ensure_csrf_cookie, name='post')
@@ -140,6 +147,7 @@ class GerarAudioAPIView(APIView):
         try:
             # Pega os dados enviados na requisição POST do JavaScrippt que já vem no formato JSON
             data = request.data
+            
             # pega o valor da variável palavra que foi declarada no JavaScrippt
             palavra = data.get('palavra')
 
@@ -148,7 +156,8 @@ class GerarAudioAPIView(APIView):
 
             # caminho com o arquivo original
             # cria o caminho para onde o arquivo de som será enviada
-            caminho = os.path.join(settings.MEDIA_ROOT, 'audios', f'{palavra}.mp3')
+            palavra_formatada = limpar_nome(palavra)
+            caminho = os.path.join(settings.MEDIA_ROOT, 'audios', f'{palavra_formatada}.mp3')
             os.makedirs(os.path.dirname(caminho), exist_ok=True)
 
             # verifica se a palavra já existe
@@ -166,7 +175,11 @@ class GerarAudioAPIView(APIView):
                 # sobreescrever o arquivo com o áudio amplificado
                 audioAmplificado.export(caminho, format="mp3", codec="libmp3lame")
 
-            som_url = f'{settings.MEDIA_URL}audios/{palavra}.mp3'
+            som_url = f'{settings.MEDIA_URL}audios/{palavra_formatada}.mp3'
+            print("palavra:", palavra)
+            print("palavra_formatada:", palavra_formatada)
+            print("som_url:", som_url)
+
             return JsonResponse({'som_url':som_url})
         
         except Exception as e:
