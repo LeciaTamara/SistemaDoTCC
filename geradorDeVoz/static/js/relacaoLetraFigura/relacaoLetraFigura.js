@@ -24,6 +24,16 @@ const letras = [
     {letra: 'Z', imagens: ['zebra.png', 'nuvem.png', 'martelo.png', 'relogio.png', 'espelho.png', 'porta.png', 'facebook.png'], correta: ['zebra.png']}
 ]
 
+//Carrega as imagens em cache antes de serem exibidas no navegador
+const imagensParaPrecarregar = new Set();
+letras.forEach(item => item.imagens.forEach(img => imagensParaPrecarregar.add(img)));
+
+imagensParaPrecarregar.forEach(nome => {
+  const img = new Image();
+  img.src = `/static/image/relacaoLetraFigura/${nome}`;
+});
+
+
 const nomeDaImagemAdaptada = {
     radio: 'rahdiu',
     bone: 'boné',
