@@ -1,27 +1,27 @@
 const letras = [
-    {letra: 'A', imagens: ['alface.png', 'bone.png', 'armario.png', 'balde.png', 'relogio.png', 'feijao.png', 'onibus.png', 'radio.png' ], correta: ['alface.png', 'armario.png']},
-    {letra: 'B', imagens: ['bone.png', 'pizza.png', 'ventilador.png', 'chave.png', 'mel.png', 'guardaChuva.png', 'balde.png', 'queijo.png'], correta: ['bone.png', 'balde.png']},
-    {letra: 'C', imagens: ['chave.png', 'escada.png', 'bicicleta.png', 'mesa.png', 'bolsa.png', 'guardaRoupa.png', 'cama.png', 'facebook.png'], correta: ['chave.png', 'cama.png']},
-    {letra: 'D', imagens: ['dado.png', 'dentista.png', 'caixa.png', 'sacola.png', 'peixe.png', 'anel.png', 'igreja.png', 'geladeira.png'], correta: ['dado.png', 'dentista.png']},
-    {letra: 'E', imagens: ['espelho.png', 'escada.png', 'relogio.png', 'queijo.png', 'fogao.png', 'moeda.png', 'vaso.png', 'pia.png'], correta: ['espelho.png', 'escada.png']},
-    {letra: 'F', imagens: ['geladeira.png', 'garfo.png', 'fogao.png', 'forma.png', 'relogio.png', 'espelho.png', 'porta.png', 'facebook.png'], correta: ['fogao.png', 'forma.png', 'facebook.png']},
-    {letra: 'G', imagens: ['geladeira.png', 'garfo.png', 'sabao.png', 'martelo.png', 'forma.png', 'liquidificador.png', 'caneta.png', 'bone.png'], correta: ['geladeira.png', 'garfo.png']},
-    {letra: 'I', imagens: ['igreja.png', 'pizza.png', 'ventilador.png', 'chave.png', 'mel.png', 'guardaChuva.png', 'balde.png', 'isqueiro.png'], correta: ['igreja.png', 'isqueiro.png']},
-    {letra: 'J', imagens: ['mel.png', 'jarra.png', 'bicicleta.png', 'mesa.png', 'armario.png', 'guardaRoupa.png', 'cama.png', 'bolsa.png'], correta: ['jarra.png']},
-    {letra: 'L', imagens: ['lampada.png', 'liquidificador.png', 'caixa.png', 'sacola.png', 'peixe.png', 'anel.png', 'igreja.png', 'geladeira.png'], correta: ['lampada.png', 'liquidificador.png']},
-    {letra: 'M', imagens: ['mesa.png', 'escada.png', 'relogio.png', 'queijo.png', 'fogao.png', 'moeda.png', 'vaso.png', 'mel.png'], correta: ['mesa.png', 'moeda.png', 'mel.png']},
-    {letra: 'N', imagens: ['espelho.png', 'nuvem.png', 'fogao.png', 'forma.png', 'relogio.png', 'caneta.png', 'porta.png', 'facebook.png'], correta: ['nuvem.png']},
-    {letra: 'O', imagens: ['ovo.png', 'garfo.png', 'sabao.png', 'martelo.png', 'onibus.png', 'liquidificador.png', 'caneta.png', 'anel.png'], correta: ['ovo.png', 'onibus.png']},
-    {letra: 'P', imagens: ['panela.png', 'pizza.png', 'ventilador.png', 'chave.png', 'mel.png', 'guardaChuva.png', 'balde.png', 'isqueiro.png'], correta: ['panela.png', 'pizza.png']},
-    {letra: 'Q', imagens: ['mel.png', 'jarra.png', 'bicicleta.png', 'mesa.png', 'alface.png', 'guardaRoupa.png', 'cama.png', 'queijo.png'], correta: ['queijo.png']},
-    {letra: 'R', imagens: ['radio.png', 'liquidificador.png', 'caixa.png', 'sacola.png', 'peixe.png', 'anel.png', 'igreja.png', 'guardaRoupa.png'], correta: ['radio.png']},
-    {letra: 'S', imagens: ['mesa.png', 'escada.png', 'relogio.png', 'sabao.png', 'fogao.png', 'moeda.png', 'vaso.png', 'sacola.png'], correta: ['sabao.png', 'sacola.png']},
-    {letra: 'T', imagens: ['tesoura.png', 'nuvem.png', 'martelo.png', 'forma.png', 'relogio.png', 'espelho.png', 'porta.png', 'facebook.png'], correta: ['tesoura.png']},
-    {letra: 'U', imagens: ['uva.png', 'ovo.png', 'sabao.png', 'martelo.png', 'onibus.png', 'liquidificador.png', 'caneta.png', 'anel.png'], correta: ['uva.png']},
-    {letra: 'V', imagens: ['panela.png', 'pizza.png', 'ventilador.png', 'chave.png', 'mel.png', 'guardaChuva.png', 'vestido.png', 'isqueiro.png'], correta: ['ventilador.png', 'vestido.png']},
-    {letra: 'W', imagens: ['mel.png', 'jarra.png', 'bicicleta.png', 'mesa.png', 'whatsapp.png', 'guardaRoupa.png', 'cama.png', 'queijo.png'], correta: ['whatsapp.png']},
-    {letra: 'X', imagens: ['radio.png', 'liquidificador.png', 'caixa.png', 'sacola.png', 'peixe.png', 'caneta.png', 'igreja.png', 'xicara.png'], correta: ['xicara.png']},
-    {letra: 'Z', imagens: ['zebra.png', 'nuvem.png', 'martelo.png', 'relogio.png', 'espelho.png', 'porta.png', 'facebook.png'], correta: ['zebra.png']}
+    {letra: 'A', imagens: ['alface.webp', 'bone.webp', 'armario.webp', 'balde.webp', 'relogio.webp', 'feijao.webp', 'onibus.webp', 'radio.webp' ], correta: ['alface.webp', 'armario.webp']},
+    {letra: 'B', imagens: ['bone.webp', 'pizza.webp', 'ventilador.webp', 'chave.webp', 'mel.webp', 'guardaChuva.webp', 'balde.webp', 'queijo.webp'], correta: ['bone.webp', 'balde.webp']},
+    {letra: 'C', imagens: ['chave.webp', 'escada.webp', 'bicicleta.webp', 'mesa.webp', 'bolsa.webp', 'guardaRoupa.webp', 'cama.webp', 'facebook.webp'], correta: ['chave.webp', 'cama.webp']},
+    {letra: 'D', imagens: ['dado.webp', 'dentista.webp', 'caixa.webp', 'sacola.webp', 'peixe.webp', 'anel.webp', 'igreja.webp', 'geladeira.webp'], correta: ['dado.webp', 'dentista.webp']},
+    {letra: 'E', imagens: ['espelho.webp', 'escada.webp', 'relogio.webp', 'queijo.webp', 'fogao.webp', 'moeda.webp', 'vaso.webp', 'pia.webp'], correta: ['espelho.webp', 'escada.webp']},
+    {letra: 'F', imagens: ['geladeira.webp', 'garfo.webp', 'fogao.webp', 'forma.webp', 'relogio.webp', 'espelho.webp', 'porta.webp', 'facebook.webp'], correta: ['fogao.webp', 'forma.webp', 'facebook.webp']},
+    {letra: 'G', imagens: ['geladeira.webp', 'garfo.webp', 'sabao.webp', 'martelo.webp', 'forma.webp', 'liquidificador.webp', 'caneta.webp', 'bone.webp'], correta: ['geladeira.webp', 'garfo.webp']},
+    {letra: 'I', imagens: ['igreja.webp', 'pizza.webp', 'ventilador.webp', 'chave.webp', 'mel.webp', 'guardaChuva.webp', 'balde.webp', 'isqueiro.webp'], correta: ['igreja.webp', 'isqueiro.webp']},
+    {letra: 'J', imagens: ['mel.webp', 'jarra.webp', 'bicicleta.webp', 'mesa.webp', 'armario.webp', 'guardaRoupa.webp', 'cama.webp', 'bolsa.webp'], correta: ['jarra.webp']},
+    {letra: 'L', imagens: ['lampada.webp', 'liquidificador.webp', 'caixa.webp', 'sacola.webp', 'peixe.webp', 'anel.webp', 'igreja.webp', 'geladeira.webp'], correta: ['lampada.webp', 'liquidificador.webp']},
+    {letra: 'M', imagens: ['mesa.webp', 'escada.webp', 'relogio.webp', 'queijo.webp', 'fogao.webp', 'moeda.webp', 'vaso.webp', 'mel.webp'], correta: ['mesa.webp', 'moeda.webp', 'mel.webp']},
+    {letra: 'N', imagens: ['espelho.webp', 'nuvem.webp', 'fogao.webp', 'forma.webp', 'relogio.webp', 'caneta.webp', 'porta.webp', 'facebook.webp'], correta: ['nuvem.webp']},
+    {letra: 'O', imagens: ['ovo.webp', 'garfo.webp', 'sabao.webp', 'martelo.webp', 'onibus.webp', 'liquidificador.webp', 'caneta.webp', 'anel.webp'], correta: ['ovo.webp', 'onibus.webp']},
+    {letra: 'P', imagens: ['panela.webp', 'pizza.webp', 'ventilador.webp', 'chave.webp', 'mel.webp', 'guardaChuva.webp', 'balde.webp', 'isqueiro.webp'], correta: ['panela.webp', 'pizza.webp']},
+    {letra: 'Q', imagens: ['mel.webp', 'jarra.webp', 'bicicleta.webp', 'mesa.webp', 'alface.webp', 'guardaRoupa.webp', 'cama.webp', 'queijo.webp'], correta: ['queijo.webp']},
+    {letra: 'R', imagens: ['radio.webp', 'liquidificador.webp', 'caixa.webp', 'sacola.webp', 'peixe.webp', 'anel.webp', 'igreja.webp', 'guardaRoupa.webp'], correta: ['radio.webp']},
+    {letra: 'S', imagens: ['mesa.webp', 'escada.webp', 'relogio.webp', 'sabao.webp', 'fogao.webp', 'moeda.webp', 'vaso.webp', 'sacola.webp'], correta: ['sabao.webp', 'sacola.webp']},
+    {letra: 'T', imagens: ['tesoura.webp', 'nuvem.webp', 'martelo.webp', 'forma.webp', 'relogio.webp', 'espelho.webp', 'porta.webp', 'facebook.webp'], correta: ['tesoura.webp']},
+    {letra: 'U', imagens: ['uva.webp', 'ovo.webp', 'sabao.webp', 'martelo.webp', 'onibus.webp', 'liquidificador.webp', 'caneta.webp', 'anel.webp'], correta: ['uva.webp']},
+    {letra: 'V', imagens: ['panela.webp', 'pizza.webp', 'ventilador.webp', 'chave.webp', 'mel.webp', 'guardaChuva.webp', 'vestido.webp', 'isqueiro.webp'], correta: ['ventilador.webp', 'vestido.webp']},
+    {letra: 'W', imagens: ['mel.webp', 'jarra.webp', 'bicicleta.webp', 'mesa.webp', 'whatsapp.webp', 'guardaRoupa.webp', 'cama.webp', 'queijo.webp'], correta: ['whatsapp.webp']},
+    {letra: 'X', imagens: ['radio.webp', 'liquidificador.webp', 'caixa.webp', 'sacola.webp', 'peixe.webp', 'caneta.webp', 'igreja.webp', 'xicara.webp'], correta: ['xicara.webp']},
+    {letra: 'Z', imagens: ['zebra.webp', 'nuvem.webp', 'martelo.webp', 'relogio.webp', 'espelho.webp', 'porta.webp', 'facebook.webp'], correta: ['zebra.webp']}
 ]
 
 //Carrega as imagens em cache antes de serem exibidas no navegador
@@ -130,7 +130,7 @@ function mostrarLetraFigura() {
         imagem.src = `/static/image/relacaoLetraFigura/${figura}`;
         imagem.alt = figura;
         imagem.className = 'imagemFigura';
-        const nomeImagem = nomeDaImagemAdaptada[figura.replace('.png', '')] || figura.replace('.png', '');  //o replace serve para remover o nomr .png, deixando só o nome para ser enviado
+        const nomeImagem = nomeDaImagemAdaptada[figura.replace('.webp', '')] || figura.replace('.webp', '');  //o replace serve para remover o nomr .webp, deixando só o nome para ser enviado
         imagem.onclick = () => {
             emitirSomDaImagem(nomeImagem, () => {
                 verificarResposta(figura);
