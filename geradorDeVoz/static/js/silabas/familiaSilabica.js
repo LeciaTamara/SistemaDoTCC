@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // coloca o título de cada família sílabica dinamicamete
     const titulo = document.getElementById("nomeFamilia")
     if(titulo){
-        titulo.textContent = `Familia ${letra}`;
+        titulo.textContent = `Família ${letra}`;
         titulo.classList.add(corTitulo);
     }
     
@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
             familiaCriada.appendChild(botao);
         });
     } else {
-        familiaCriada.textContent = "Familia não existe";
+        familiaCriada.textContent = "Família não existe";
     }
 
     const letraSom = parametro
