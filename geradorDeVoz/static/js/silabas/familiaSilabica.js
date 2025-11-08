@@ -101,9 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 botao.classList.add('texto-preto');
             }
             
-            // const silabaDoDataTexto = familiaSilabicaAdaptada[silaba] || silaba;
-            // botao.setAttribute('data-texto', silabaDoDataTexto)
-            // botao.className = "silaba";
+            
             botao.onclick = () => {
                 pegarNomeSilaba(silaba)
             };

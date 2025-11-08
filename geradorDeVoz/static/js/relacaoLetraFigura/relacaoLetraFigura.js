@@ -43,55 +43,16 @@ const nomeDaImagemAdaptada = {
 
 
 let indiceLetra = 0;
-//função para reproduzir o áudio do texto gerado dinâmicamente
+
+/*O document.addEvenListener espera até que a página HTML esteja completmente carregada para carregar o javaScript */
 document.addEventListener('DOMContentLoaded', () => {
-  let vozesDisponiveis = [];
-
-  //função que busca todas as vozes que estão disponíveis no navegador 
-  function carregarVozes() {
-    vozesDisponiveis = speechSynthesis.getVoices();
-  }
-
-  //verifica se o navegador suporta o evento onvoiceschabged que é chamando quando as vozes ficam disponíveis
-  if (speechSynthesis.onvoiceschanged !== undefined) {
-    //isso garante que carregar vozes só seja chamado a página html já estiver carregada
-    speechSynthesis.onvoiceschanged = carregarVozes;
-  }
-
-  carregarVozes();
-
-  document.querySelectorAll('.reproduzirId').forEach(botao => {
-    botao.addEventListener('click', () => {
-      const texto = document.getElementById('letraIndicada')?.textContent?.trim();
-
-      if (!texto) return;
-
-      //cancela a fala que está falando caso o usuário clique em outro botão para as falas não misturar
-      speechSynthesis.cancel();
-
-      //cria um novo objeto de fala com o texto que foi capturado
-      const fala = new SpeechSynthesisUtterance(texto);
-      fala.lang = "pt-BR";
-
-      //busca uma vos que tenha o idioma pt-br entre as vozes disponíveis
-      const vozPortugues = vozesDisponiveis.find(voz => voz.lang === "pt-BR");
-      if (vozPortugues) fala.voice = vozPortugues;
-
-      //inicia a reprodução do texto em voz
-      speechSynthesis.speak(fala);
-    });
-  });
-
-  mostrarLetraFigura(); // se essa função estiver definida
+    mostrarLetraFigura(); // se essa função estiver definida
 });
-
 
 //função para mostrar a letra e as imagens
 function mostrarLetraFigura() {
   const letraFigura = letras[indiceLetra];
   const texto = `Selecione a figura que começa com a letra: ${letraFigura.letra}`;
-
-  
 
   // Atualiza o texto visível
   const letraIndicada = document.getElementById('letraIndicada');
@@ -102,7 +63,8 @@ function mostrarLetraFigura() {
   // Atualiza o texto que será falado
   const botaoReproduzirSom = document.querySelector('.reproduzirId');
   if (botaoReproduzirSom) {
-    botaoReproduzirSom.dataset.texto = texto;
+    const textoReproduzido = letraIndicada.textContent;
+    botaoReproduzirSom.setAttribute('data-texto', textoReproduzido)
   }
 
     const espacoImagem = document.getElementById('imagens');
@@ -139,6 +101,14 @@ function mostrarLetraFigura() {
         espacoImagem.appendChild(imagem);
     });
 }
+
+//Reproduz o som via  API
+document.querySelector('.reproduzirId').addEventListener('click', function() {
+    const texto = this.getAttribute('data-texto');
+    if(texto){
+        emitirSomDaImagem(texto);
+    }
+});
 
 function emitirSomDaImagem(palavra, callback){
     fetch('/GerarAudioAPIView/', {
