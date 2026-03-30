@@ -4,7 +4,7 @@ from django.http import JsonResponse
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.utils.decorators import method_decorator
-from gerarVoz import settings
+from configuracao import settings
 from gtts import gTTS
 import io
 import traceback

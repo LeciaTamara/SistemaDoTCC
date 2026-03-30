@@ -1,5 +1,5 @@
 """
-URL configuration for gerarVoz project.
+URL configuration for Tcc project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.2/topics/http/urls/
@@ -18,12 +18,12 @@ import os
 from django.contrib import admin
 from django.urls import path, include
 
-from gerarVoz import settings
+from configuracao import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('geradorDeVoz.urls')),
+    path('', include('sistemaDeTCC.urls')),
 ]
 
 if settings.DEBUG:
